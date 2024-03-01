@@ -77,7 +77,7 @@ function Login() {
                 Sign Up
               </Link>
             </div>
-            <div className="flex gap-[10px] text-black my-9 text-2xl">
+            <div className="flex gap-[11px] text-black my-9 text-2xl">
               <p>Already have account? </p>
               <Link
                 href={{
