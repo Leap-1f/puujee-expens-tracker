@@ -38,6 +38,7 @@ function Login() {
                 <input type="text" class="grow" placeholder="Username" />
               </label>
               <label className="input input-bordered flex items-center gap-2 h-[60px] border-gray-500 bg-gray-200 border text-black">
+                
                 <input type="text" className="grow" placeholder="Email" />
               </label>
               <label class="input text-black input-bordered flex items-center gap-2 h-[60px] border-gray-500 bg-gray-200 border">
@@ -53,7 +54,7 @@ function Login() {
                     clip-rule="evenodd"
                   />
                 </svg>
-                <input type="password" class="" value="password" />
+                <input type="password" class="" placeholder="password" />
               </label>
               <label class="input text-black input-bordered flex items-center gap-2 h-[60px] border-gray-500 bg-gray-200 border">
                 <svg
@@ -68,7 +69,7 @@ function Login() {
                     clip-rule="evenodd"
                   />
                 </svg>
-                <input type="password" class="" value="password" />
+                <input type="password" class="" placeholder="password" />
               </label>
               <Link
                 href={"/Login"}

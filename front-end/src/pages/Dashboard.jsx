@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Chart } from "chart.js";
 function Dashboard() {
   return (
     <div className="w-[100vw] h-[170vh] bg-gray-100">
@@ -53,40 +54,58 @@ function Dashboard() {
             <div className="flex flex-col w-[32%] h-[35vh] bg-white  border rounded-2xl">
               <div className="border-b-2 h-[8vh] px-[40px] py-[20px] flex gap-[20px] items-center">
                 <img src="greendot.svg" alt="" />
-                <p className="font-medium">Your income</p>
+                <p className="font-medium text-black text-3xl">Your income</p>
               </div>
-              <div className="px-[40px] py-[20px] flex flex-col gap-[20px] items-center">
-                <p></p>
+              <div className="px-[40px] py-[30px] flex flex-col gap-[40px] ">
+                <p className="text-6xl text-black font-bold">1,200,000₮</p>
                 <p className="text-2xl text-gray-400">Your income amount</p>
+                <div className="flex items-center gap-[15px]">
+                  <img className="w-[40px]" src="Leading icon (1).svg" alt="" />
+                  <p className="text-3xl text-black ">32% from last month</p>
+                </div>
               </div>
             </div>
             <div className="flex flex-col w-[32%] h-[35vh] bg-white  border rounded-2xl">
               <div className="border-b-2 h-[8vh] px-[40px] py-[20px] flex gap-[20px] items-center">
                 <img src="bluedot.svg" alt="" />
-                <p className="font-medium">Your Expenses</p>
+                <p className="font-medium text-black text-3xl">Your Expenses</p>
               </div>
-              <div className="px-[40px] py-[20px] flex flex-col gap-[20px] items-center">
-                <p></p>
+              <div className="px-[40px] py-[30px] flex flex-col gap-[40px] ">
+                <p className="text-6xl text-black font-bold">-1,200,000₮</p>
                 <p className="text-2xl text-gray-400">Your income amount</p>
+                <div className="flex items-center gap-[15px]">
+                  <img className="w-[40px]" src="Leading icon (2).svg" alt="" />
+                  <p className="text-3xl text-black ">32% from last month</p>
+                </div>
               </div>
             </div>
           </div>
           <div className="flex gap-[50px] w-[100vw] h-[40vh] px-[200px] py-[100px] ">
             <div className="flex flex-col w-[50%] h-[40vh] bg-white border   rounded-2xl">
               <div className="border-b-2 h-[7vh] px-[40px] py-[20px] flex gap-[20px] items-center">
-                <p className="font-semibold">Income - Expense</p>
+                <p className="font-semibold text-black text-2xl">
+                  Income - Expense
+                </p>
+                <div>
+                  <canvas id="myChart"></canvas>
+                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                </div>
               </div>
             </div>
             <div className="flex flex-col w-[50%] h-[40vh] bg-white  border rounded-2xl ">
               <div className="border-b-2 h-[7vh] px-[40px] py-[20px] flex gap-[20px] items-center">
-                <p className="font-semibold">Income - Expense</p>
+                <p className="font-semibold text-black text-2xl">
+                  Income - Expense
+                </p>
               </div>
             </div>
           </div>
           <div className="flex gap-[50px] w-[100vw]  px-[200px] py-[130px]">
             <div className="flex flex-col w-[100%] h-[55vh] bg-white border rounded-2xl ">
               <div className="border-b-2 h-[7vh] px-[40px] py-[20px] flex gap-[20px] items-center">
-                <p className="font-semibold text-xl">Last Records</p>
+                <p className="font-semibold text-black text-2xl">
+                  Last Records
+                </p>
               </div>
             </div>
           </div>

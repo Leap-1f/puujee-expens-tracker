@@ -3,7 +3,7 @@ function Currency() {
   return (
     <div className="w-[100vw] h-[100vh] bg-white ">
       <div className="flex flex-col justify-center items-center gap-[100px]">
-        <div className="flex flex-col justify-center items-center gap-[30px] p-[40px]">
+        <div className="flex flex-col justify-center items-center gap-[30px] p-[60px]">
           <div className="flex items-center gap-[10px]">
             <img className="w-[30px] h-[30px]" src="vector.png" alt="" />
             <h1 className="flex  justify-center  text-3xl font-medium text-black">
@@ -26,13 +26,13 @@ function Currency() {
                 Та валютаа сонгоно уу?
               </option>
               <option>MNT-Mongolian Tugrik</option>
-              <option>USE-Dollar</option>
+              <option>USA-Dollar</option>
               <option>RUS-Ruble</option>
             </select>
             <p className="py-[20px] text-black text-xl">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequuntur, vel labore quidem hic enim eius ducimus magni
-              reprehenderin.
+              Your base currency should be the one you use most often. All
+              transaction in other currencies will be calculated based on this
+              one
             </p>
             <Link
               href={"/Balance"}
