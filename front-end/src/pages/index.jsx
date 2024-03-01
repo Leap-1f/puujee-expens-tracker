@@ -1,5 +1,5 @@
-import Login from "@/pages/Login";
-import CreatePage from "@/pages/CreatePage";
+import Login from "./Login";
+import CreatePage from "./CreatePage";
 export default function Home() {
   return (
     <div>
