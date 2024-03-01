@@ -2,7 +2,7 @@ import Login from "./Login";
 import CreatePage from "./CreatePage";
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <Login></Login>
       {/* <CreatePage></CreatePage> */}
     </div>

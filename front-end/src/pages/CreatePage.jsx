@@ -12,7 +12,7 @@ function Login() {
             <div className="flex items-center gap-[10px]">
               <img className="w-[30px] h-[30px]" src="vector.png" alt="" />
               <h1 className="flex  justify-center  text-3xl font-medium text-black">
-                Welcome back
+                Welcome backk
               </h1>
             </div>
             <div className="flex flex-col gap-[20px] items-center p-9">
