@@ -2,29 +2,28 @@ import Link from "next/link";
 import { Chart } from "chart.js";
 function Dashboard() {
   return (
-    <div className="w-[100vw] h-[170vh] bg-gray-100">
-      <div>
-        <div className="navbar px-[200px] h-[150px] bg-white">
-          <div className="flex-1 ">
-            <div className="flex  justify-center items-center gap-[50px]">
-              <img className="w-[40px]" src="vector.png" alt="" />
-              <Link
-                href={"/Dashboard"}
-                className="btn btn-ghost text-2xl text-black"
-              >
-                Dashboard
-              </Link>
-              <Link
-                href={"/Records"}
-                className="btn btn-ghost text-2xl text-black"
-              >
-                Records
-              </Link>
-            </div>
+    <div className="flex justify-center">
+      <div className="w-[1440px] h-[1148px] fixed  bg-gray-100">
+        <div className="navbar w-[100%] h-[100px] bg-white flex justify-between">
+          <div className="flex  justify-center items-center gap-[24px]">
+            <img className="w-[40px]" src="vector.png" alt="" />
+            <Link
+              href={"/Dashboard"}
+              className="btn btn-ghost text-xl text-black"
+            >
+              Dashboard
+            </Link>
+            <Link
+              href={"/Records"}
+              className="btn btn-ghost text-xl text-black"
+            >
+              Records
+            </Link>
           </div>
+
           <div className="flex-none gap-8">
             <div className="form-control">
-              <div className="w-[200px] btn items-center flex justify-center text-2xl border border-white bg-blue-600 text-white h-[50px] rounded-3xl">
+              <div className="w-[200px] btn items-center flex justify-center text-xl border border-white bg-blue-600 text-white h-[50px] rounded-3xl">
                 +Records
               </div>
             </div>
@@ -45,45 +44,45 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className="flex flex-col w-[100vw] h-[90vh]  ">
-          <div className="flex gap-[50px] w-[100vw] h-[35vh] px-[200px] py-[70px]">
-            <div className="flex flex-col w-[32%] h-[35vh] bg-blue-600 p-[30px] border rounded-2xl">
+        <div className="flex flex-col w-[100%] h-[90vh] gap-[50px] ">
+          <div className="flex gap-[50px] ">
+            <div className="flex flex-col w-[100%] h-[220px] bg-blue-600 p-[30px] border rounded-2xl">
               <img src="" alt="" />
               <h1>hello</h1>
             </div>
-            <div className="flex flex-col w-[32%] h-[35vh] bg-white  border rounded-2xl">
-              <div className="border-b-2 h-[8vh] px-[40px] py-[20px] flex gap-[20px] items-center">
+            <div className="flex flex-col w-[100%] h-[220px] bg-white  border rounded-2xl">
+              <div className="border-b-2 h-[8vh] px-[40px] py-[15px] flex gap-[20px] items-center">
                 <img src="greendot.svg" alt="" />
-                <p className="font-medium text-black text-3xl">Your income</p>
+                <p className="font-medium text-black text-xl">Your income</p>
               </div>
-              <div className="px-[40px] py-[30px] flex flex-col gap-[40px] ">
-                <p className="text-6xl text-black font-bold">1,200,000₮</p>
-                <p className="text-2xl text-gray-400">Your income amount</p>
+              <div className="px-[40px] py-[20px] flex flex-col gap-[10px] ">
+                <p className="text-3xl text-black font-bold">1,200,000₮</p>
+                <p className="text-xl text-gray-400">Your income amount</p>
                 <div className="flex items-center gap-[15px]">
-                  <img className="w-[40px]" src="Leading icon (1).svg" alt="" />
-                  <p className="text-3xl text-black ">32% from last month</p>
+                  <img className="w-[20px]" src="Leading icon (1).svg" alt="" />
+                  <p className="text-xl text-black ">32% from last month</p>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col w-[32%] h-[35vh] bg-white  border rounded-2xl">
-              <div className="border-b-2 h-[8vh] px-[40px] py-[20px] flex gap-[20px] items-center">
+            <div className="flex flex-col w-[100%] h-[220px] bg-white  border rounded-2xl">
+              <div className="border-b-2 h-[8vh] px-[40px] py-[15px] flex gap-[20px] items-center">
                 <img src="bluedot.svg" alt="" />
-                <p className="font-medium text-black text-3xl">Your Expenses</p>
+                <p className="font-medium text-black text-xl">Total Expenses</p>
               </div>
-              <div className="px-[40px] py-[30px] flex flex-col gap-[40px] ">
-                <p className="text-6xl text-black font-bold">-1,200,000₮</p>
-                <p className="text-2xl text-gray-400">Your income amount</p>
+              <div className="px-[40px] py-[20px] flex flex-col gap-[10px] ">
+                <p className="text-3xl text-black font-bold">1,200,000₮</p>
+                <p className="text-xl text-gray-400">Your income amount</p>
                 <div className="flex items-center gap-[15px]">
-                  <img className="w-[40px]" src="Leading icon (2).svg" alt="" />
-                  <p className="text-3xl text-black ">32% from last month</p>
+                  <img className="w-[20px]" src="Leading icon (2).svg" alt="" />
+                  <p className="text-xl text-black ">32% from last month</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex gap-[50px] w-[100vw] h-[40vh] px-[200px] py-[100px] ">
-            <div className="flex flex-col w-[50%] h-[40vh] bg-white border   rounded-2xl">
-              <div className="border-b-2 h-[7vh] px-[40px] py-[20px] flex gap-[20px] items-center">
-                <p className="font-semibold text-black text-2xl">
+          <div className="flex gap-[50px] w-[100%] h-[300px]   ">
+            <div className="flex flex-col w-[50%] bg-white border  h-[300px]   rounded-2xl">
+              <div className="border-b-2 h-[5vh] px-[40px] py-[20px] flex gap-[20px] items-center">
+                <p className="font-semibold text-black text-xl">
                   Income - Expense
                 </p>
                 <div>
@@ -92,20 +91,18 @@ function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col w-[50%] h-[40vh] bg-white  border rounded-2xl ">
-              <div className="border-b-2 h-[7vh] px-[40px] py-[20px] flex gap-[20px] items-center">
-                <p className="font-semibold text-black text-2xl">
+            <div className="flex flex-col w-[50%]  bg-white  h-[300px] border rounded-2xl ">
+              <div className="border-b-2 h-[5vh] px-[40px] py-[20px] flex gap-[20px] items-center">
+                <p className="font-semibold text-black text-xl">
                   Income - Expense
                 </p>
               </div>
             </div>
           </div>
-          <div className="flex gap-[50px] w-[100vw]  px-[200px] py-[130px]">
+          <div className="flex gap-[50px] w-[100%] ]">
             <div className="flex flex-col w-[100%] h-[55vh] bg-white border rounded-2xl ">
-              <div className="border-b-2 h-[7vh] px-[40px] py-[20px] flex gap-[20px] items-center">
-                <p className="font-semibold text-black text-2xl">
-                  Last Records
-                </p>
+              <div className="border-b-2 h-[5vh] px-[40px] py-[20px] flex gap-[20px] items-center">
+                <p className="font-semibold text-black text-xl">Last Records</p>
               </div>
             </div>
           </div>
@@ -113,6 +110,5 @@ function Dashboard() {
       </div>
     </div>
   );
-  s;
 }
 export default Dashboard;

@@ -11,13 +11,13 @@ function Login() {
           <div className="flex flex-col items-center justify-between">
             <div className="flex items-center gap-[10px]">
               <img className="w-[30px] h-[30px]" src="vector.png" alt="" />
-              <h1 className="flex  justify-center  text-3xl font-medium text-black">
-                Welcome backk
+              <h1 className="flex  justify-center  text-2xl font-medium text-black">
+                Welcome back
               </h1>
             </div>
             <div className="flex flex-col gap-[20px] items-center p-9">
               <div className="flex items-center gap-[10px]">
-                <h1 className="flex  justify-center  text-3xl font-medium text-black">
+                <h1 className="flex  justify-center  text-2xl font-medium text-black">
                   Create Geld account
                 </h1>
               </div>
@@ -26,7 +26,7 @@ function Login() {
               </h2>
             </div>
             <div className="flex flex-col w-[100%] gap-[30px]">
-              <label class="input input-bordered flex text-black h-[60px] border-gray-500 bg-gray-200 border text-blackflex items-center gap-2">
+              <label class="input input-bordered flex text-black h-[50px] border-gray-500 bg-gray-200 border text-blackflex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -37,11 +37,10 @@ function Login() {
                 </svg>
                 <input type="text" class="grow" placeholder="Username" />
               </label>
-              <label className="input input-bordered flex items-center gap-2 h-[60px] border-gray-500 bg-gray-200 border text-black">
-                
+              <label className="input input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border text-black">
                 <input type="text" className="grow" placeholder="Email" />
               </label>
-              <label class="input text-black input-bordered flex items-center gap-2 h-[60px] border-gray-500 bg-gray-200 border">
+              <label class="input text-black input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -56,7 +55,7 @@ function Login() {
                 </svg>
                 <input type="password" class="" placeholder="password" />
               </label>
-              <label class="input text-black input-bordered flex items-center gap-2 h-[60px] border-gray-500 bg-gray-200 border">
+              <label class="input text-black input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -73,12 +72,12 @@ function Login() {
               </label>
               <Link
                 href={"/Login"}
-                className="btn my-[30px] h-[60px] rounded-3xl  w-[100%] text-white bg-blue-500 text-2xl "
+                className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl "
               >
                 Sign Up
               </Link>
             </div>
-            <div className="flex gap-[11px] text-black my-9 text-2xl">
+            <div className="flex gap-[11px] text-black my-9 text-xl">
               <p>Already have account? </p>
               <Link
                 href={{

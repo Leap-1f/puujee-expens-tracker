@@ -7,21 +7,21 @@ function Login() {
           <div className="flex flex-col items-center justify-between">
             <div className="text-3xl font-medium  text-black"></div>
             <div className="flex flex-col gap-[20px] p-9">
-              <div className="flex items-center gap-[10px]">
+              <div className="flex items-center justify-center gap-[10px]">
                 <img className="w-[30px] h-[30px]" src="vector.png" alt="" />
-                <h1 className="flex  justify-center  text-3xl font-medium text-black">
+                <h1 className="flex  justify-center  text-2xl font-medium text-black">
                   Welcome back
                 </h1>
               </div>
-              <h2 className="text-xl text-gray-700">
+              <h2 className="text-lg text-gray-700">
                 Welcome back, Please enter your details
               </h2>
             </div>
             <div className="flex flex-col w-[100%] ">
-              <label className="input input-bordered flex items-center my-[30px] gap-2 h-[60px] border-gray-500 bg-gray-200 border text-black">
+              <label className="input input-bordered flex items-center my-[30px] gap-2 h-[50px] border-gray-500 bg-gray-200 border text-black">
                 <input type="text" className="grow" placeholder="Email" />
               </label>
-              <label class="input text-black input-bordered flex items-center gap-2 h-[60px] border-gray-500 bg-gray-200 border">
+              <label class="input text-black input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
@@ -38,7 +38,7 @@ function Login() {
               </label>
               <Link
                 href={"/Wait"}
-                className="btn my-[30px] h-[60px] rounded-3xl  w-[100%] text-white bg-blue-500 text-2xl "
+                className="btn my-[30px] h-[40px] rounded-2xl  w-[100%] text-white bg-blue-500 text-xl "
               >
                 Log In
               </Link>

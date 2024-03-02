@@ -17,11 +17,11 @@ function Currency() {
             <li className="step ">Finish</li>
           </ul>
         </div>
-        <div className="w-[25vw] h-[40vh]  gap-[30px] p-[20px] flex flex-col items-center">
+        <div className="w-[25vw] h-[40vh]  gap-[20px] p-[20px] flex flex-col items-center">
           <img className="w-[150px] " src="cash.svg" alt="" />
-          <p className="text-4xl text-black font-bold">Select base Currency</p>
+          <p className="text-2xl text-black font-bold">Select base Currency</p>
           <div>
-            <select class="select select-primary bg-gray-300 text-black text-2xl  w-[100%] h-[70px] ">
+            <select class="select select-primary bg-gray-300 text-black text-xl  w-[100%] h-[50px] ">
               <option disabled selected>
                 Та валютаа сонгоно уу?
               </option>
@@ -29,14 +29,14 @@ function Currency() {
               <option>USA-Dollar</option>
               <option>RUS-Ruble</option>
             </select>
-            <p className="py-[20px] text-black text-xl">
+            <p className="py-[20px] text-black text-lg">
               Your base currency should be the one you use most often. All
               transaction in other currencies will be calculated based on this
               one
             </p>
             <Link
               href={"/Balance"}
-              className="btn my-[30px] h-[60px] rounded-3xl  w-[100%] text-white bg-blue-500 text-2xl "
+              className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl "
             >
               Confirm
             </Link>
