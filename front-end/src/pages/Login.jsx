@@ -1,24 +1,26 @@
 import Link from "next/link";
+import { useRouter } from "next/router"; // Import useRouter hook
+
 function Login() {
+  const router = useRouter(); // Initialize useRouter hook
+
   return (
-    <div className="w-[full] h-[100vh] flex">
-      <div className="w-[50%] flex justify-center items-center bg-white ">
-        <div className=" w-[40%] h-[60%] ">
-          <div className="flex flex-col items-center justify-between">
-            <div className="text-3xl font-medium  text-black"></div>
-            <div className="flex flex-col gap-[20px] p-9">
-              <div className="flex items-center justify-center gap-[10px]">
-                <img className="w-[30px] h-[30px]" src="vector.png" alt="" />
-                <h1 className="flex  justify-center  text-2xl font-medium text-black">
-                  Welcome back
-                </h1>
-              </div>
-              <h2 className="text-lg text-gray-700">
-                Welcome back, Please enter your details
-              </h2>
-            </div>
-            <div className="flex flex-col w-[100%] ">
-              <label className="input input-bordered flex items-center my-[30px] gap-2 h-[50px] border-gray-500 bg-gray-200 border text-black">
+    <div className="w-[1440px] fixed h-[100vh] flex">
+      <div className="w-[708px] flex justify-center items-center bg-white pl-[222px] pr-[126px] ">
+        <div className="w-[384px] h-[555px]  flex flex-col items-center gap-[40px]">
+          <div className="flex p-[5px] items-center gap-[10px] ">
+            <img className="w-[23px] h-[23px]" src="vector.png" alt="" />
+            <img src="Geld.svg" alt="" />
+          </div>
+          <div className="flex flex-col items-center gap-[8px]">
+            <p className="text-[24px] text-black">Create Geld account</p>
+            <p className="text-[16px] text-black">
+              Sign up below to create your Wallet account
+            </p>
+          </div>
+          <div className="w-[100%] h-[48px] h-fixed ">
+            <div className="flex flex-col gap-[16px]">
+              <label className="input input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border text-black">
                 <input type="text" className="grow" placeholder="Email" />
               </label>
               <label class="input text-black input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border">
@@ -36,24 +38,30 @@ function Login() {
                 </svg>
                 <input type="password" class="" placeholder="password" />
               </label>
-              <Link
-                href={"/Wait"}
-                className="btn my-[30px] h-[40px] rounded-2xl  w-[100%] text-white bg-blue-500 text-xl "
-              >
-                Log In
-              </Link>
             </div>
-            <div className="flex gap-[10px] text-black">
-              <p>Dont't have account? </p>
-              <Link href="/CreatePage">
-                <p className="underline">Sign Up</p>
+            <Link
+              href={"/Wait"}
+              className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl "
+            >
+              Log In
+            </Link>
+            <div className="flex items-center justify-center gap-[10px]">
+              <p className="text-[16px] text-black">Already have account?</p>
+              <Link
+                className="text-blue-500 text-[16px]"
+                href={{
+                  pathname: "/CreatePage",
+                }}
+              >
+                Sign Up
               </Link>
             </div>
           </div>
         </div>
       </div>
-      <div className="w-[50%] bg-blue-600"></div>
+      <div className="w-[708px]  bg-blue-600"></div>
     </div>
   );
 }
+
 export default Login;

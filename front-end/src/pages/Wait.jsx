@@ -7,16 +7,16 @@ function Wait() {
         pathname: "/Currency",
       }}
     >
-      <div className="w-[100vw] h-[100vh] bg-white">
-        <div className="flex flex-col justify-center items-center gap-[40px] p-[500px]">
-          <div className="flex items-center gap-[10px]">
-            <img className="w-[30px] h-[30px]" src="vector.png" alt="" />
-            <h1 className="flex  justify-center  text-3xl font-medium text-black">
-              Geld
-            </h1>
+      <div className="w-[1440px] h-[100vh] fixed flex justify-center items-center bg-white">
+        <div className="flex items-center justify-center flex-col gap-[48px]">
+          <div className="flex p-[10px] items-center gap-[17px]">
+            <img className="w-[44px] h-[44px]" src="vector.png" alt="" />
+            <img className="w-[90px] h-[31px]" src="Geld.svg" alt="" />
           </div>
-          <span className="loading loading-lg loading-spinner text-info "></span>
-          <p className="text-black">Түр хүлээнэ үү</p>
+          <div className="flex flex-col gap-[16px] items-center">
+            <span className="loading loading-lg loading-spinner text-info "></span>
+            <p className="text-black text-[16px]">Түр хүлээнэ үү</p>
+          </div>
         </div>
       </div>
     </Link>

@@ -5,20 +5,30 @@ function Modal({ isvisible, onClose }) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center glass justify-center">
-      <div className="w-[888px] h-[512px] flex flex-col bg-white rounded-lg ">
-        <div className="border-b-2 flex h-[2vh] px-[24px] py-[30px] items-center justify-between">
-          <p className="text-2xl text-black font-medium">Add Record</p>
+      <div className="w-[792px] h-[464px] flex flex-col bg-white rounded-lg ">
+        <div className="border-b-2 flex h-[68px] px-[24px] py-[20px] items-center justify-between">
+          <p className="text-[20px] text-black font-medium">Add Record</p>
 
-          <img
-            className="text-black w-[30px] "
-            onClick={onClose}
-            src="X.svg"
-            alt=""
-          />
+          <button onClick={onClose} className="btn btn-square btn-outline">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-[24px] h-[24px]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
-        <div className="p-[30px]  flex gap-[24px]">
+        <div className=" flex ">
           <div className=" flex h-[400px] w-[400px] gap-[20px] flex-col  ">
-            <div className="flex flex-col gap-[20px] ">
+            <div className="flex flex-col gap-[20px] p-[24px] ">
               <div className="flex gap-[10px]">
                 <div className="w-[195px] rounded-3xl text-xl border h-[40px] flex justify-center items-center btn text-white bg-blue-600">
                   Expense

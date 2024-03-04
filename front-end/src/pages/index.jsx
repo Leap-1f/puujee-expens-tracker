@@ -1,10 +1,12 @@
 import Login from "./Login";
-import CreatePage from "./CreatePage";
+import React, { useEffect, useState } from "react";
+
 export default function Home() {
+
+
   return (
-    <div className="">
+    <div className="bg-gray-100">
       <Login></Login>
-      {/* <CreatePage></CreatePage> */}
     </div>
   );
 }
