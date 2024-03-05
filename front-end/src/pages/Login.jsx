@@ -5,7 +5,7 @@ function Login() {
   const router = useRouter(); // Initialize useRouter hook
 
   return (
-    <div className="w-[1440px] fixed h-[100vh] flex">
+    <div className="w-[1440x] fixed h-[100vh] flex">
       <div className="w-[708px] flex justify-center items-center bg-white pl-[222px] pr-[126px] ">
         <div className="w-[384px] h-[555px]  flex flex-col items-center gap-[40px]">
           <div className="flex p-[5px] items-center gap-[10px] ">
