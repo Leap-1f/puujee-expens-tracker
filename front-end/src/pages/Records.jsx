@@ -9,7 +9,7 @@ function Records() {
     <Fragment>
       <div className="flex justify-center h-[1220px]">
         <div className="w-[1440px]   bg-gray-200 ">
-          <div className="navbar h-[100px] bg-white">
+          <div className="navbar h-[80px] bg-white">
             <div className="flex-1 ">
               <div className="flex  justify-center items-center gap-[24px]">
                 <img className="w-[27px]" src="vector.png" alt="" />
@@ -34,11 +34,7 @@ function Records() {
                 </div>
               </div>
               <div className="dropdown dropdown-end">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar"
-                >
+                <div className="btn btn-ghost btn-circle avatar">
                   <div className="w-[200px] rounded-full">
                     <img
                       alt="Tailwind CSS Navbar component"
@@ -64,11 +60,11 @@ function Records() {
                   <input
                     type="text"
                     placeholder="Search"
-                    className="bg-gray-300 h-[32px] w-[250px] text-[16px] rounded-2xl input input-bordered"
+                    className="bg-gray-300 h-[32px] text-black w-[250px] text-[16px] rounded-xl input input-bordered"
                   />
                 </div>
                 <div className="flex flex-col  gap-[24px]">
-                  <div className="text-[16px] font-bold ">Types</div>
+                  <div className="text-[16px] font-bold text-black">Types</div>
                   <div className=" flex flex-col gap-[10px]">
                     <div className="flex items-center gap-[10px]">
                       <input
@@ -76,7 +72,7 @@ function Records() {
                         defaultChecked
                         className="checkbox w-[20px] h-[20px] rounded-full"
                       />
-                      <p className="text-md  ">All</p>
+                      <p className="text-md  text-black">All</p>
                     </div>
 
                     <div className="flex items-center gap-[10px]">
@@ -85,7 +81,7 @@ function Records() {
                         defaultChecked
                         className="checkbox w-[20px] h-[20px] rounded-full"
                       />
-                      <p className="text-md ">Income</p>
+                      <p className="text-md text-black">Income</p>
                     </div>
                     <div className="flex items-center gap-[10px]">
                       <input
@@ -93,20 +89,20 @@ function Records() {
                         defaultChecked
                         className="checkbox w-[20px] h-[20px] rounded-full"
                       />
-                      <p className="text-md ">Expense</p>
+                      <p className="text-md text-black">Expense</p>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-col gap-[16px]  ">
-                  <div className="text-[16px] font-bold  flex justify-between">
+                  <div className="text-[16px] font-bold text-black flex justify-between">
                     <p>Category</p>
-                    <p className="text-gray-300 font-light   ">Clear</p>
+                    <p className="text-gray-300 font-light  ">Clear</p>
                   </div>
                   <div className="h-[24px]">
                     <div className="flex items-center justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Food & Drinks</p>
+                        <p className="text-[16px] text-black">Food & Drinks</p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -117,7 +113,7 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Shopping </p>
+                        <p className="text-[16px] text-black">Shopping </p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -128,7 +124,7 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Housing</p>
+                        <p className="text-[16px] text-black">Housing</p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -139,7 +135,7 @@ function Records() {
                     <div className="flex items-center h-[32px] justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Transportation</p>
+                        <p className="text-[16px] text-black">Transportation</p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -150,7 +146,7 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Vehicle</p>
+                        <p className="text-[16px] text-black">Vehicle</p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -161,7 +157,9 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Life & Entertainment</p>
+                        <p className="text-[16px] text-black">
+                          Life & Entertainment
+                        </p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -172,7 +170,9 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Communication, PC</p>
+                        <p className="text-[16px] text-black">
+                          Communication, PC
+                        </p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -183,7 +183,9 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Financial expenses</p>
+                        <p className="text-[16px] text-black">
+                          Financial expenses
+                        </p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -194,7 +196,7 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Investments</p>
+                        <p className="text-[16px] text-black">Investments</p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -205,7 +207,7 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Income</p>
+                        <p className="text-[16px]  text-black">Income</p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
@@ -216,23 +218,29 @@ function Records() {
                     <div className="flex items-center h-[32px]  justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] ">Others</p>
+                        <p className="text-[16px] text-black">Others</p>
                       </div>
                       <img
                         className="w-[20px] h-[20px]"
                         src="Leading icon (5).svg"
                         alt=""
                       />
+                    </div>
+                    <div className="flex items-center h-[32px]  justify-between">
+                      <div className="flex gap-[20px]">
+                        <img src="Leading icon (6).svg" alt="" />
+                        <p className="text-[16px] text-black">Add Category</p>
+                      </div>
                     </div>
                     <div className="flex flex-col gap-[16px] py-[24px]">
-                      <div className=" text-[16px] font-bold ">
+                      <div className=" text-[16px] font-bold text-black">
                         <p>Amount Range</p>
                       </div>
                       <div className="flex gap-[16px]">
-                        <div className="h-[48px] rounded-lg border w-[114px] flex justify-center items-center">
+                        <div className="h-[48px] rounded-lg text-black border w-[114px] flex justify-center items-center">
                           0
                         </div>
-                        <div className="h-[48px]  border rounded-lg w-[114px] flex justify-center items-center">
+                        <div className="h-[48px]  border text-black rounded-lg w-[114px] flex justify-center items-center">
                           1000
                         </div>
                       </div>
@@ -244,7 +252,7 @@ function Records() {
                         className="range"
                         step="25"
                       />
-                      <div className="w-full flex justify-between text-xs px-2">
+                      <div className="w-full flex justify-between text-xs text-black px-2">
                         <span>0</span>
                         <span>1000</span>
                       </div>
@@ -253,15 +261,15 @@ function Records() {
                 </div>
               </div>
             </div>
-            <div className="flex w-[894px] h-[100vh]  ">
-              <div className="flex justify-between w-[894px] h-[48px] py-[24px] px-[24px]">
+            <div className="flex w-[1100px] flex-col h-[100vh] gap-[40px] ">
+              <div className="flex justify-between w-[1100px] h-[48px] py-[24px] pr-[20px] pl-[130px]">
                 <div className="join h-[48px] ">
                   <button className="join-item btn">«</button>
                   <button className="join-item btn">Last 30 Days</button>
                   <button className="join-item btn">»</button>
                 </div>
 
-                <select class="select select-primary bg-gray-100 text-sm font-semibold text-black  border-gray-400 w-[180px] h-[48px] ">
+                <select class="select select-primary bg-gray-100 text-[16px] font-semibold text-black  border-gray-300 w-[180px] h-[48px] ">
                   <option disabled selected>
                     Newest fisrt
                   </option>
@@ -269,6 +277,16 @@ function Records() {
                   <option>USA-Dollar</option>
                   <option>RUS-Ruble</option>
                 </select>
+              </div>
+              <div className="w-[1080px] h-[50px] border border-gray-300 rounded-2xl bg-white flex justify-between py-[10px] px-[24px]">
+                <div className="flex gap-[16px] justify-center items-center">
+                  <input
+                    type="checkbox"
+                    defaultChecked
+                    className="checkbox w-[20px] h-[20px] border-gray-300"
+                  />
+                  <p className="text-lg text-black">Select all</p>
+                </div>
               </div>
             </div>
           </div>

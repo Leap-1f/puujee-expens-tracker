@@ -3,9 +3,9 @@
 // require("dotenv").config();
 import postgres from "postgres";
 import dotenv from "dotenv";
-// import ps from "ps";
+
 dotenv.config();
-// console.log(process.env.PGDATABASE);
+console.log(process.env.PGDATABASE);
 let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
 
 export const sql = postgres({

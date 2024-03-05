@@ -3,8 +3,8 @@ import { Chart } from "chart.js";
 function Dashboard() {
   return (
     <div className="flex justify-center">
-      <div className="w-[1440px] h-[1148px] fixed  bg-gray-100">
-        <div className="navbar w-[100%] h-[100px] bg-white flex justify-between">
+      <div className="w-[1440px] h-[1148px]   bg-gray-100">
+        <div className="navbar w-[100%] h-[80px] bg-white flex justify-between">
           <div className="flex  justify-center items-center gap-[24px]">
             <img className="w-[27px]" src="vector.png" alt="" />
             <Link
@@ -106,7 +106,7 @@ function Dashboard() {
           </div>
           <div className="flex gap-[50px] w-[100%] ]">
             <div className="flex flex-col w-[100%] h-[55vh] bg-white border rounded-2xl ">
-              <div className="border-b-2 h-[5vh] px-[40px] py-[24px] flex gap-[20px] items-center">
+              <div className="border-b-2 h-[8vh] px-[40px] py-[24px] flex gap-[20px] items-center">
                 <p className="font-semibold text-black text-[16px]">
                   Last Records
                 </p>

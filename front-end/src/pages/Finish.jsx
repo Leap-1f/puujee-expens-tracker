@@ -29,7 +29,7 @@ function Finish() {
           </div>
           <Link
             href={"/Dashboard"}
-            className="btn h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl "
+            className="btn h-[50px] rounded-[20px]  w-[100%] text-white bg-blue-500 text-xl "
           >
             Go to Dashboard
           </Link>

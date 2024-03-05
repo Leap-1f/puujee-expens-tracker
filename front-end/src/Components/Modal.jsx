@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Modal({ isvisible, onClose }) {
@@ -30,14 +31,17 @@ function Modal({ isvisible, onClose }) {
           <div className=" flex h-[400px] w-[400px] gap-[20px] flex-col  ">
             <div className="flex flex-col gap-[32px] p-[24px] ">
               <div className="flex gap-[10px]">
-                <div className="w-[172px] h-[40px] rounded-3xl text-lg border  flex justify-center items-center btn text-white bg-blue-600">
+                <div className="w-[172px] h-[35px] rounded-3xl text-lg   flex justify-center items-center btn text-white bg-blue-600">
                   Expense
                 </div>
-                <div className="w-[172px] border rounded-3xl h-[40px] text-lg  flex justify-center btn items-center text-white bg-gray-300">
+                {/* <Link
+                  href={"/Income"}
+                  className=" btn-ghost text-[16px] w-[172px]  rounded-3xl h-[35px] text-lg  flex justify-center btn items-center text-black bg-gray-300"
+                >
                   Income
-                </div>
+                </Link> */}
               </div>
-              <div className="w-[348px] border-gray-600  h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px]">
+              <div className="w-[348px] border-gray-400  h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px]">
                 <div className="flex flex-col ">
                   <p className="text-md text-black ">Amount</p>
                   <p className="text-sm text-gray-400">₮000.00</p>
@@ -104,10 +108,13 @@ function Modal({ isvisible, onClose }) {
             </div>
             <div className="flex flex-col  ">
               <p className="text-xl text-black"></p>
-              <div className="w-[348px] h-[280px] border-gray-400 bg-gray-100 border rounded-xl p-[20px]">
+              <input
+                type="text"
+                className="w-[348px] h-[280px] border-gray-400 bg-gray-100 border rounded-xl p-[20px]"
+              >
                 {" "}
                 Write here
-              </div>
+              </input>
             </div>
           </div>
         </div>

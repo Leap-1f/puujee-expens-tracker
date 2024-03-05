@@ -24,7 +24,7 @@ function Currency() {
         </div>
         <div className="flex flex-col gap-[32px]">
           <div>
-            <select class="select select-primary bg-gray-300 text-black text-lg w-[384px] h-[64px] ">
+            <select class="select select-primary bg-gray-300 text-black text-md w-[384px] h-[64px] ">
               <option disabled selected>
                 Та валютаа сонгоно уу?
               </option>
@@ -33,9 +33,9 @@ function Currency() {
               <option>RUS-Ruble</option>
             </select>
             <p className=" text-black text-[12px] pt-[12px]">
-              Your base currency should be the one you use most often. All
-              transaction in other currencies will be calculated based on this
-              one
+              Таны үндсэн валют нь таны хамгийн их ашигладаг мөнгөн тэмдэгт байх
+              ёстой. Бусад валютаар хийх бүх гүйлгээг үүн дээр үндэслэн тооцохыг
+              анхаарна уу?
             </p>
           </div>
           <Link
