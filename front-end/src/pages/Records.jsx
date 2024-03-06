@@ -293,7 +293,6 @@ function Records() {
         </div>
       </div>
 
-      {/* Modal component */}
       <Modal isvisible={showModal} onClose={() => setShowModal(false)} />
     </Fragment>
   );

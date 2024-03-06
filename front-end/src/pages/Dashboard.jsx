@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { Chart } from "chart.js";
+import { Bar } from "react-chartjs-2";
+import Example from "./barchart";
+import Rounded from "./rounded";
+// import Rounded from "./rounded";
 function Dashboard() {
   return (
     <div className="flex justify-center">
@@ -46,9 +49,17 @@ function Dashboard() {
 
         <div className="flex flex-col w-[100%] h-[90vh] py-[40px] gap-[50px] ">
           <div className="flex gap-[50px] ">
-            <div className="flex flex-col w-[100%] h-[220px] bg-blue-600 p-[30px] border rounded-2xl">
-              <img src="" alt="" />
-              <h1>hello</h1>
+            <div className="flex w-[100%] h-[220px] bg-blue-600 justify-between p-[30px] gap-[20px] border rounded-2xl">
+              <div className="flex flex-col gap-[90px]">
+                <div className="flex gap-[10px]">
+                  <img src="vector (2).png" alt="" />
+                  <img src="Geld (2).svg" alt="" />
+                </div>
+                <div className="flex flex-col ">
+                  <p className="text-[16px] text-gray">cash</p>
+                  <p className="text-white text-[24px]">10.000.000</p>
+                </div>
+              </div>
             </div>
             <div className="flex flex-col w-[100%] h-[220px] bg-white  border rounded-2xl">
               <div className="border-b-2 h-[8vh] px-[24px] py-[15px] flex gap-[20px] items-center">
@@ -89,11 +100,8 @@ function Dashboard() {
                 <p className="font-semibold text-black text-[16px]">
                   Income - Expense
                 </p>
-                <div>
-                  <canvas id="myChart"></canvas>
-                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                </div>
               </div>
+              <Example></Example>
             </div>
             <div className="flex flex-col w-[50%]  bg-white  h-[300px] border rounded-2xl ">
               <div className="border-b-2 h-[56px] px-[24px] py-[20px] flex gap-[20px] justify-between items-center">
@@ -102,6 +110,7 @@ function Dashboard() {
                 </p>
                 <p className="text-[16px] ">Jun 1 - Nov 30</p>
               </div>
+              <Rounded></Rounded>
             </div>
           </div>
           <div className="flex gap-[50px] w-[100%] ]">

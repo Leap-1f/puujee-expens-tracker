@@ -5,8 +5,8 @@ function Login() {
   const router = useRouter(); // Initialize useRouter hook
 
   return (
-    <div className="w-[1440px] fixed h-[100vh] flex">
-      <div className="w-[708px] flex justify-center items-center bg-white pl-[222px] pr-[126px] ">
+    <div className="w-[100%] h-[100vh] flex justify-center">
+      <div className="w-[50%] flex justify-center items-center bg-white pl-[222px] pr-[126px] ">
         <div className="w-[384px] h-[555px]  flex flex-col items-center gap-[40px]">
           <div className="flex p-[5px] items-center gap-[10px] ">
             <img className="w-[23px] h-[23px]" src="vector.png" alt="" />
@@ -125,7 +125,7 @@ function Login() {
           </div> */}
         {/* // </div> */}
       </div>
-      <div className="w-[708px]  bg-blue-600"></div>
+      <div className="w-[50%]  bg-blue-600"></div>
     </div>
   );
 }

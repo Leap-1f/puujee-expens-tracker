@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 
 function Modal({ isvisible, onClose }) {
@@ -112,7 +111,6 @@ function Modal({ isvisible, onClose }) {
                 type="text"
                 className="w-[348px] h-[280px] border-gray-400 bg-gray-100 border rounded-xl p-[20px]"
               >
-                {" "}
                 Write here
               </input>
             </div>

@@ -8,3 +8,11 @@ export default function Home() {
     </div>
   );
 }
+// import ChartComponent from "@/Components/Chart/Chart";
+// export default function Home(){
+//   return (
+//     <div>
+//       <ChartComponent></ChartComponent>
+//     </div>
+//   )
+// }

@@ -1,11 +1,11 @@
 import Link from "next/link";
 function Balance() {
   return (
-    <div className="flex flex-col w-[1440px] h-[100vh]  items-center gap-[100px] bg-white">
+    <div className="flex flex-col w-[100%] h-[100vh]  items-center gap-[100px] bg-white">
       <div className="flex flex-col justify-center items-center gap-[30px] pt-[40px]">
         <div className="flex items-center gap-[10px]">
           <img className="w-[27px] h-[27px]" src="vector.png" alt="" />
-          <img className="w-[56px] h-[19px]" src="Geld.svg" alt="" />
+          <img className="w-[56px] h-[19px]" src="Geld (3).svg" alt="" />
         </div>
         <ul className="steps w-[20vw]">
           <li className="step step-info">Currecy</li>
