@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import Modal from "@/Components/Modal";
-
+import Modal2 from "@/Components/Modal2";
 function Records() {
   const [showModal, setShowModal] = useState(false);
 
@@ -293,7 +293,7 @@ function Records() {
         </div>
       </div>
 
-      <Modal isvisible={showModal} onClose={() => setShowModal(false)} />
+      <Modal isvisible={showModal} onClose={() => setShowModal(false)}></Modal>
     </Fragment>
   );
 }

@@ -1,14 +1,14 @@
 import Link from "next/link";
-import { Bar } from "react-chartjs-2";
+
 import Example from "./barchart";
 import Rounded from "./rounded";
-// import Rounded from "./rounded";
+
 function Dashboard() {
   return (
     <div className="flex justify-center">
-      <div className="w-[1440px] h-[1148px]   bg-gray-100">
+      <div className="w-[1440px] h-[1148px] bg-gray-100">
         <div className="navbar w-[100%] h-[80px] bg-white flex justify-between">
-          <div className="flex  justify-center items-center gap-[24px]">
+          <div className="flex justify-center items-center gap-[24px]">
             <img className="w-[27px]" src="vector.png" alt="" />
             <Link
               href={"/Dashboard"}
@@ -31,11 +31,7 @@ function Dashboard() {
               </div>
             </div>
             <div className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar"
-              >
+              <div className="btn btn-ghost btn-circle avatar">
                 <div className="w-[200px] rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
@@ -101,7 +97,7 @@ function Dashboard() {
                   Income - Expense
                 </p>
               </div>
-              <Example></Example>
+              <Example /> {/* Uncomment to render the Example component */}
             </div>
             <div className="flex flex-col w-[50%]  bg-white  h-[300px] border rounded-2xl ">
               <div className="border-b-2 h-[56px] px-[24px] py-[20px] flex gap-[20px] justify-between items-center">
@@ -110,7 +106,7 @@ function Dashboard() {
                 </p>
                 <p className="text-[16px] ">Jun 1 - Nov 30</p>
               </div>
-              <Rounded></Rounded>
+              <Rounded /> {/* Uncomment to render the Rounded component */}
             </div>
           </div>
           <div className="flex gap-[50px] w-[100%] ]">

@@ -21,15 +21,19 @@ function Example() {
         ],
         datasets: [
           {
-            data: [66, 144, 146, 116, 107, 131, 43],
-            label: "Applied",
+            data: [
+              3000000, 3000000, 3100000, 3000000, 3000000, 3000000, 3000000,
+            ],
+            label: "Income",
             borderColor: "rgb(109, 253, 181)",
             backgroundColor: "rgb(109, 253, 181,0.5)",
             borderWidth: 2,
           },
           {
-            data: [40, 100, 44, 70, 63, 30, 10],
-            label: "Accepted",
+            data: [
+              2100000, 2100000, 2100000, 2100000, 2100000, 2100000, 2100000,
+            ],
+            label: "Expense",
             borderColor: "rgb(75, 192, 192)",
             backgroundColor: "rgb(75, 192, 192,0.5)",
             borderWidth: 2,

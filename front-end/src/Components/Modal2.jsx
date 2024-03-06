@@ -1,6 +1,6 @@
 import React from "react";
 
-function Modal({ isvisible, onClose }) {
+function Modal2({ isvisible, onClose }) {
   if (!isvisible) return null;
 
   return (
@@ -75,7 +75,7 @@ function Modal({ isvisible, onClose }) {
                     <div className="flex flex-col">
                       <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm">
                         <option disabled selected>
-                          4:15 PM
+                          Oct 30, 2023
                         </option>
                         <option>MNT-Mongolian Tugrik</option>
                         <option>USA-Dollar</option>
@@ -107,7 +107,7 @@ function Modal({ isvisible, onClose }) {
             <div className="flex flex-col">
               <p className="text-xl text-black"></p>
               <textarea
-                className="w-[348px] h-[280px] border-gray-400 bg-gray-100 border rounded-xl p-[20px]"
+                className="w-[348px] h-[280px] border-gray-400 text-black bg-gray-100 border rounded-xl p-[20px]"
                 placeholder="Write here"
               ></textarea>
             </div>
@@ -118,4 +118,4 @@ function Modal({ isvisible, onClose }) {
   );
 }
 
-export default Modal;
+export default Modal2;
