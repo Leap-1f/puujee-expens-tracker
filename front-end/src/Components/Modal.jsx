@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Modal({ isvisible, onClose }) {
@@ -33,16 +34,25 @@ function Modal({ isvisible, onClose }) {
                 <div className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-blue-600">
                   Expense
                 </div>
-                <div className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-gray-400">
+                <Link
+                  className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-gray-400"
+                  href={{
+                    pathname: "/Modal2",
+                  }}
+                >
                   Income
-                </div>
+                </Link>
               </div>
-              <div className="w-[348px] border-gray-400 h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px]">
-                <div className="flex flex-col">
+              <input
+                type="number"
+                placeholder="Amount "
+                className="w-[348px] border-gray-400 h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px]"
+              >
+                {/* <div className="flex flex-col">
                   <p className="text-md text-black">Amount</p>
                   <p className="text-sm text-gray-400">₮000.00</p>
-                </div>
-              </div>
+                </div> */}
+              </input>
 
               <div className="flex flex-col gap-[20px] justify-center items-center">
                 <div className="flex flex-col gap-[0px] h-[80px] w-[348px]">
@@ -85,7 +95,7 @@ function Modal({ isvisible, onClose }) {
                   </div>
                 </div>
               </div>
-              <button className="h-[35px] rounded-lg text-white bg-blue-600 ">
+              <button className="h-[40px] rounded-lg text-white bg-blue-600 ">
                 Add Records
               </button>
             </div>
