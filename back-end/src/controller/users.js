@@ -1,10 +1,7 @@
-// import { sql } from "../../config/database.js";
-
 export const getAllUsers = async (req, res) => {
-  try {
+  app.post("/api/signUp", async (req, res) => {
     const data = await sql`SELECT * FROM users`;
+    console.log(data);
     res.send(data);
-  } catch (err) {
-    console.log(err);
-  }
+  });
 };
