@@ -16,32 +16,36 @@
 //
 import express from "express";
 import { sql } from "./config/database.js";
-import bcrypt from "bcrypt";
+import bcrypt, { genSalt } from "bcrypt";
 
 const app = express();
 const PORT = 8080;
 
 app.use(express.json());
 
+app.get("/api", (req, res) => {
+  res.send("Hello server deer huselt tani irlee");
+});
+
 app.post("/api/signUp", async (req, res) => {
-  const { name, email, password } = req.body;
   try {
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const { name, email, password } = req.body;
+    const hashedPassword = await bcrypt.hash(password, genSaltSync(1));
 
-    // Insert user data into the database
-    const data =
-      await sql`INSERT INTO users(name, email, password) VALUES(${name}, ${email}, ${hashedPassword}) RETURNING *`;
+    const data = await sql`
+      INSERT INTO users (name, email, password)
+      VALUES (${name}, ${email}, ${hashedPassword})
+`;
 
-    console.log(data);
     res.send(data);
+    console.log(data);
   } catch (error) {
-    console.error("Error inserting data:", error);
+    console.error(error);
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`started server on port http://localhost:${PORT}`);
+  console.log(`Server started on port http://localhost:${PORT}`);
 });
 
 // //

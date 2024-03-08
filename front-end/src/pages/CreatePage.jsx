@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { useState } from "react";
-
 function CreatePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const API_ENDPOINT = "http://localhost:8080/api/signUp";
 
   const signUp = async () => {
     try {
-      const response = await fetch(API_ENDPOINT, {
+      const response = await fetch("http://localhost:8080/api/signUp", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -22,6 +20,7 @@ function CreatePage() {
     } catch (error) {
       console.error("Error creating data:", error);
     }
+    console.log(signUp);
   };
 
   return (
