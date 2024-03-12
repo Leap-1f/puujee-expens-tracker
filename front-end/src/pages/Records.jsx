@@ -7,10 +7,10 @@ function Records() {
 
   return (
     <Fragment>
-      <div className="flex justify-center h-[1220px]">
+      <div className="flex justify-center h-[1250px] w-[100vw] bg-gray-200">
         <div className="w-[1440px]   bg-gray-200 ">
-          <div className="navbar h-[80px] bg-white">
-            <div className="flex-1 ">
+          <div className="navbar h-[80px]  bg-white rounded-xl">
+            <div className="flex-1  ">
               <div className="flex  justify-center items-center gap-[24px]">
                 <img className="w-[27px]" src="vector.png" alt="" />
                 <Link
@@ -65,14 +65,16 @@ function Records() {
                 </div>
                 <div className="flex flex-col  gap-[24px]">
                   <div className="text-[16px] font-bold text-black">Types</div>
-                  <div className=" flex flex-col gap-[10px]">
+                  <div className=" flex flex-col gap-[10px] ">
                     <div className="flex items-center gap-[10px]">
                       <input
                         type="checkbox"
                         defaultChecked
                         className="checkbox w-[20px] h-[20px] rounded-full"
                       />
-                      <p className="text-md  text-black">All</p>
+                      <p className="text-md cursor-pointer text-black hover:underline">
+                        All
+                      </p>
                     </div>
 
                     <div className="flex items-center gap-[10px]">
@@ -81,7 +83,9 @@ function Records() {
                         defaultChecked
                         className="checkbox w-[20px] h-[20px] rounded-full"
                       />
-                      <p className="text-md text-black">Income</p>
+                      <p className="text-md text-black cursor-pointer hover:underline">
+                        Income
+                      </p>
                     </div>
                     <div className="flex items-center gap-[10px]">
                       <input
@@ -89,147 +93,173 @@ function Records() {
                         defaultChecked
                         className="checkbox w-[20px] h-[20px] rounded-full"
                       />
-                      <p className="text-md text-black">Expense</p>
+                      <p className="text-md text-black cursor-pointer hover:underline">
+                        Expense
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-col gap-[16px]  ">
                   <div className="text-[16px] font-bold text-black flex justify-between">
                     <p>Category</p>
-                    <p className="text-gray-300 font-light  ">Clear</p>
+                    <p className="text-gray-500 cursor-pointer font-light  ">
+                      Clear
+                    </p>
                   </div>
-                  <div className="h-[24px]">
-                    <div className="flex items-center justify-between">
+                  <div className="h-[24px] ">
+                    <div className="flex items-center justify-between cursor-pointer">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">Food & Drinks</p>
+                        <p className="text-[16px] text-black hover:underline">
+                          Food & Drinks
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
-                        <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">Shopping </p>
+                        <img className="" src="Leading icon (3).svg" alt="" />
+                        <p className="text-[16px] text-black hover:underline">
+                          Shopping{" "}
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px] cursor-pointer hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">Housing</p>
+                        <p className="text-[16px] text-black hover:underline">
+                          Housing
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px] justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">Transportation</p>
+                        <p className="text-[16px] text-black hover:underline">
+                          Transportation
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">Vehicle</p>
+                        <p className="text-[16px] text-black hover:underline">
+                          Vehicle
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">
+                        <p className="text-[16px] text-black hover:underline">
                           Life & Entertainment
                         </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">
+                        <p className="text-[16px] text-black hover:underline">
                           Communication, PC
                         </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 scale duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>{" "}
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">
+                        <p className="text-[16px] text-black hover:underline">
                           Financial expenses
                         </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">Investments</p>
+                        <p className="text-[16px] text-black hover:underline">
+                          Investments
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px]  text-black">Income</p>
+                        <p className="text-[16px]  text-black hover:underline">
+                          Income
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
                         <img src="Leading icon (3).svg" alt="" />
-                        <p className="text-[16px] text-black">Others</p>
+                        <p className="text-[16px] text-black hover:underline">
+                          Others
+                        </p>
                       </div>
                       <img
-                        className="w-[20px] h-[20px]"
+                        className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                         src="Leading icon (5).svg"
                         alt=""
                       />
                     </div>
-                    <div className="flex items-center h-[32px]  justify-between">
+                    <div className="flex items-center h-[32px] cursor-pointer justify-between">
                       <div className="flex gap-[20px]">
-                        <img src="Leading icon (6).svg" alt="" />
-                        <p className="text-[16px] text-black">Add Category</p>
+                        <img
+                          className="hover:scale-125 duration-200"
+                          src="Leading icon (6).svg"
+                          alt=""
+                        />
+                        <p className="text-[16px] text-black hover:underline">
+                          Add Category
+                        </p>
                       </div>
                     </div>
                     <div className="flex flex-col gap-[16px] py-[24px]">
@@ -237,7 +267,7 @@ function Records() {
                         <p>Amount Range</p>
                       </div>
                       <div className="flex gap-[16px]">
-                        <div className="h-[48px] rounded-lg text-black border w-[114px] flex justify-center items-center">
+                        <div className="h-[48px] rounded-lg text-black border w-[114px] flex justify-center items-center  hover:text-red-400 hover:duration-300">
                           0
                         </div>
                         <div className="h-[48px]  border text-black rounded-lg w-[114px] flex justify-center items-center">

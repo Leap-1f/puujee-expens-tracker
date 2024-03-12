@@ -4,8 +4,13 @@ function CreatePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rePassword, setRePassword] = useState("");
 
   const signUp = async () => {
+    if (password !== rePassword) {
+      setError("Passwords do not match");
+      return;
+    }
     try {
       const response = await fetch("http://localhost:8080/api/signUp", {
         method: "POST",
@@ -13,7 +18,7 @@ function CreatePage() {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, rePassword }),
       });
       const newData = await response.json();
       console.log(newData);
@@ -22,11 +27,23 @@ function CreatePage() {
     }
     console.log(signUp);
   };
-
+  const addUser = () => {
+    signUp();
+  };
   return (
     <div className="w-[100%] h-[100vh] flex justify-center">
       <div className="w-[50%] flex justify-center items-center bg-white pl-[222px] pr-[126px] ">
         <div className="w-[384px] h-[555px]  flex flex-col items-center gap-[40px]">
+          <div className="flex p-[5px] items-center gap-[10px] ">
+            <img className="w-[23px] h-[23px]" src="vector.png" alt="" />
+            <img src="Geld (3).svg" alt="" />
+          </div>{" "}
+          <div className="flex flex-col items-center gap-[8px]">
+            <p className="text-[24px] text-black">Create Geld account</p>
+            <p className="text-[16px] text-black">
+              Sign up below to create your Wallet account
+            </p>
+          </div>
           <div className="w-[100%] h-[48px] h-fixed">
             <div className="flex flex-col gap-[16px]">
               <label className="input input-bordered flex text-black h-[50px] border-gray-500 bg-gray-200 border  items-center gap-2">
@@ -95,20 +112,23 @@ function CreatePage() {
                 </svg>
                 <input
                   type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={rePassword}
+                  onChange={(e) => setRePassword(e.target.value)}
                   className=""
-                  placeholder=" Re-password"
-                />
+                  placeholder=" Re enter password"
+                />{" "}
+                {}
               </label>
             </div>
-            <button
-              onClick={signUp}
+            <Link
+              href={"/Login"}
+              onClick={addUser}
               disabled={name === "" || email === "" || password === ""}
               className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl "
             >
               Sign Up
-            </button>
+            </Link>
+
             <div className="flex items-center justify-center gap-[10px]">
               <p className="text-[16px] text-black">Already have an account?</p>
               <Link href="/Login">
