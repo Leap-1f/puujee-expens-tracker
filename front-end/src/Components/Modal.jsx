@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Dropdown from "./Dropdown";
 
 function Modal({ isvisible, onClose }) {
   if (!isvisible) return null;
@@ -55,8 +56,8 @@ function Modal({ isvisible, onClose }) {
               </input>
 
               <div className="flex flex-col gap-[20px] justify-center items-center">
-                <div className="flex flex-col gap-[0px] h-[80px] w-[348px]">
-                  <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm w-[348px] h-[48px]">
+                <div className="flex flex-col gap-[0px] h-[80px] w-[348px] justify-center">
+                  {/* <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm w-[348px] h-[48px]">
                     <option disabled selected>
                       Find or choose category
                     </option>
@@ -66,7 +67,9 @@ function Modal({ isvisible, onClose }) {
                     </option>
                     <option>USA-Dollar</option>
                     <option>RUS-Ruble</option>
-                  </select>
+                  </select> */}
+
+                  <Dropdown></Dropdown>
                 </div>
                 <div className="flex 400px gap-[10px]">
                   <div className="flex flex-col w-[168px]">
@@ -75,9 +78,14 @@ function Modal({ isvisible, onClose }) {
                         <option disabled selected>
                           Oct 30, 2023
                         </option>
-                        <option>MNT-Mongolian Tugrik</option>
-                        <option>USA-Dollar</option>
-                        <option>RUS-Ruble</option>
+                        <input
+                          type="date"
+                          id="start"
+                          name="trip-start"
+                          value="2018-07-22"
+                          min="2018-01-01"
+                          max="2018-12-31"
+                        />
                       </select>
                     </div>
                   </div>
