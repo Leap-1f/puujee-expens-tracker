@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-import Example from "./barchart";
-import Rounded from "./rounded";
+import Example from "@/Components/barchart";
 
 function Dashboard() {
   return (
