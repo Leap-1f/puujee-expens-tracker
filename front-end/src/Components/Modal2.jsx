@@ -1,10 +1,10 @@
-import React from "react";
-
+import React, { useState } from "react";
+import Modal from "./Modal";
 function Modal2({ isvisible, onClose }) {
   if (!isvisible) return null;
-
+  const [showExpenseModal, setshowExpenseModal] = useState(false);
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center glass justify-center">
+    <div className="fixed inset-0 bg-black bg-opacity-15 backdrop-blur-sm flex items-center  justify-center">
       <div className="w-[792px] h-[512px] flex flex-col bg-white rounded-lg">
         <div className="border-b-2 flex h-[68px] px-[24px] py-[20px] items-center justify-between">
           <p className="text-[20px] text-black font-medium">Add Record</p>
@@ -30,10 +30,13 @@ function Modal2({ isvisible, onClose }) {
           <div className="flex h-[400px] w-[400px] gap-[20px] flex-col">
             <div className="flex flex-col gap-[32px] p-[24px]">
               <div className="flex gap-[10px]">
-                <div className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-blue-600">
+                <div
+                  onClick={setshowExpenseModal}
+                  className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-gray-500"
+                >
                   Expense
                 </div>
-                <div className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-gray-400">
+                <div className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-green-600">
                   Income
                 </div>
               </div>
@@ -45,7 +48,7 @@ function Modal2({ isvisible, onClose }) {
               </div>
 
               <div className="flex flex-col gap-[20px] justify-center items-center">
-                <div className="flex flex-col gap-[0px] h-[80px] w-[348px]">
+                <div className="flex flex-col gap-[0px] h-[75px] w-[348px]">
                   <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm w-[348px] h-[48px]">
                     <option disabled selected>
                       Find or choose category
@@ -58,7 +61,7 @@ function Modal2({ isvisible, onClose }) {
                     <option>RUS-Ruble</option>
                   </select>
                 </div>
-                <div className="flex 400px gap-[10px]">
+                <div className="flex 400px gap-[15px]">
                   <div className="flex flex-col w-[168px]">
                     <div className="flex flex-col">
                       <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm">
@@ -85,7 +88,7 @@ function Modal2({ isvisible, onClose }) {
                   </div>
                 </div>
               </div>
-              <button className="h-[35px] rounded-lg text-white bg-blue-600 ">
+              <button className="h-[40px] rounded-lg text-white bg-green-600 ">
                 Add Records
               </button>
             </div>
@@ -114,6 +117,12 @@ function Modal2({ isvisible, onClose }) {
           </div>
         </div>
       </div>
+      {showExpenseModal && (
+        <Modal
+          isvisible={showExpenseModal}
+          onClose={() => setshowExpenseModal(true)}
+        />
+      )}
     </div>
   );
 }
