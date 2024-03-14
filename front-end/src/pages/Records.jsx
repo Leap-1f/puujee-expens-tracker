@@ -1,18 +1,49 @@
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import Modal from "@/Components/Modal";
-import Modal2 from "@/Components/Modal2";
+import Category from "@/Components/Category";
 function Records() {
   const [showModal, setShowModal] = useState(false);
+  const [showCategory, setShowCategory] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("all");
+  const [year, setYear] = useState(new Date().getFullYear());
+  const [month, setMonth] = useState(new Date().getMonth() + 1); // Month is zero-based
 
+  const handlePreviousMonth = () => {
+    setMonth((prevMonth) => {
+      if (prevMonth === 1) {
+        setYear((prevYear) => prevYear - 1);
+        return 12;
+      } else {
+        return prevMonth - 1;
+      }
+    });
+  };
+
+  const handleNextMonth = () => {
+    setMonth((prevMonth) => {
+      if (prevMonth === 12) {
+        setYear((prevYear) => prevYear + 1);
+        return 1;
+      } else {
+        return prevMonth + 1;
+      }
+    });
+  };
   return (
     <Fragment>
       <div className="flex justify-center h-[1250px] w-[100vw] bg-gray-200">
-        <div className="w-[1440px]   bg-gray-200 ">
-          <div className="navbar h-[80px]  bg-white rounded-xl">
-            <div className="flex-1  ">
-              <div className="flex  justify-center items-center gap-[24px]">
-                <img className="w-[27px]" src="vector.png" alt="" />
+        <div className="w-[1440px]   bg-gray-200  flex items-center flex-col">
+          <div className="w-[100vw] bg-white flex  justify-center">
+            <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
+              <div className="flex justify-center items-center gap-[24px]">
+                <Link href={"/Dashboard"}>
+                  <img
+                    className="cursor-pointer w-[27px]"
+                    src="vector.png"
+                    alt=""
+                  />
+                </Link>
                 <Link
                   href={"/Dashboard"}
                   className="btn btn-ghost text-[16px] text-black"
@@ -26,20 +57,21 @@ function Records() {
                   Records
                 </Link>
               </div>
-            </div>
-            <div className="flex-none gap-8">
-              <div className="form-control">
-                <div className="w-[99px] btn  items-center flex justify-center text-md border border-white bg-blue-600 text-white h-[42px] rounded-3xl">
-                  +Records
+
+              <div className="flex-none gap-8">
+                <div className="form-control">
+                  <div className="w-[99px] btn  items-center flex justify-center text-md border border-white bg-blue-600 text-white h-[42px] rounded-3xl">
+                    +Records
+                  </div>
                 </div>
-              </div>
-              <div className="dropdown dropdown-end">
-                <div className="btn btn-ghost btn-circle avatar">
-                  <div className="w-[200px] rounded-full">
-                    <img
-                      alt="Tailwind CSS Navbar component"
-                      src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                    />
+                <div className="dropdown dropdown-end">
+                  <div className="btn btn-ghost btn-circle avatar">
+                    <div className="w-[200px] rounded-full">
+                      <img
+                        alt="Tailwind CSS Navbar component"
+                        src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -68,34 +100,51 @@ function Records() {
                   <div className=" flex flex-col gap-[10px] ">
                     <div className="flex items-center gap-[10px]">
                       <input
-                        type="checkbox"
-                        defaultChecked
-                        className="checkbox w-[20px] h-[20px] rounded-full"
+                        type="radio"
+                        id="all"
+                        name="recordType"
+                        value="all"
+                        checked={selectedTab === "all"}
+                        onChange={() => setSelectedTab("all")}
                       />
-                      <p className="text-md cursor-pointer text-black hover:underline">
+                      <label
+                        htmlFor="all"
+                        className="text-md cursor-pointer text-black hover:underline"
+                      >
                         All
-                      </p>
+                      </label>
                     </div>
-
                     <div className="flex items-center gap-[10px]">
                       <input
-                        type="checkbox"
-                        defaultChecked
-                        className="checkbox w-[20px] h-[20px] rounded-full"
+                        type="radio"
+                        id="income"
+                        name="recordType"
+                        value="income"
+                        checked={selectedTab === "income"}
+                        onChange={() => setSelectedTab("income")}
                       />
-                      <p className="text-md text-black cursor-pointer hover:underline">
+                      <label
+                        htmlFor="income"
+                        className="text-md text-black cursor-pointer hover:underline"
+                      >
                         Income
-                      </p>
+                      </label>
                     </div>
                     <div className="flex items-center gap-[10px]">
                       <input
-                        type="checkbox"
-                        defaultChecked
-                        className="checkbox w-[20px] h-[20px] rounded-full"
+                        type="radio"
+                        id="expense"
+                        name="recordType"
+                        value="expense"
+                        checked={selectedTab === "expense"}
+                        onChange={() => setSelectedTab("expense")}
                       />
-                      <p className="text-md text-black cursor-pointer hover:underline">
+                      <label
+                        htmlFor="expense"
+                        className="text-md text-black cursor-pointer hover:underline"
+                      >
                         Expense
-                      </p>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -257,7 +306,10 @@ function Records() {
                           src="Leading icon (6).svg"
                           alt=""
                         />
-                        <p className="text-[16px] text-black hover:underline">
+                        <p
+                          className="text-[16px] text-black hover:underline"
+                          onClick={() => setShowCategory(true)}
+                        >
                           Add Category
                         </p>
                       </div>
@@ -293,10 +345,17 @@ function Records() {
             </div>
             <div className="flex w-[1100px] flex-col h-[100vh] gap-[40px] ">
               <div className="flex justify-between w-[1100px] h-[48px] py-[24px] pr-[20px] pl-[130px]">
-                <div className="join h-[48px] ">
-                  <button className="join-item btn">«</button>
-                  <button className="join-item btn">Last 30 Days</button>
-                  <button className="join-item btn">»</button>
+                <div className="join h-[48px]">
+                  <button
+                    className="join-item btn"
+                    onClick={handlePreviousMonth}
+                  >
+                    «
+                  </button>
+                  <button className="join-item btn">{`${year}-${month}`}</button>
+                  <button className="join-item btn" onClick={handleNextMonth}>
+                    »
+                  </button>
                 </div>
 
                 <select class="select select-primary bg-gray-100 text-[16px] font-semibold text-black  border-gray-300 w-[180px] h-[48px] ">
@@ -308,7 +367,7 @@ function Records() {
                   <option>RUS-Ruble</option>
                 </select>
               </div>
-              <div className="w-[1080px] h-[50px] border border-gray-300 rounded-2xl bg-white flex justify-between py-[10px] px-[24px]">
+              <div className="w-[1080px] h-[50px] border border-gray-300 rounded-xl bg-white flex justify-between py-[10px] px-[24px]">
                 <div className="flex gap-[16px] justify-center items-center">
                   <input
                     type="checkbox"
@@ -317,11 +376,141 @@ function Records() {
                   />
                   <p className="text-lg text-black">Select all</p>
                 </div>
+                <div className="flex items-center">35,500₮</div>
+              </div>
+              <div className="w-[1080px] h-[404px] flex flex-col gap-[12px]">
+                <div className="text-[16px] font-semibold text-black">
+                  Today
+                </div>
+                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
+                  <div className="flex  items-center gap-[16px]">
+                    <div className="form-control">
+                      <label className="label cursor-pointer">
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          className="checkbox"
+                        />
+                      </label>
+                    </div>
+                    <img src="house.svg" alt="" />
+                    <div className="flex flex-col">
+                      <p className="text-[16px]  font-medium tracking-wide text-black">
+                        Lending & Renting
+                      </p>
+                      <p className="text-12px text-gray-400">14:00</p>
+                    </div>
+                  </div>
+                  <div className="flex text-16px items-center text-green-500 tracking-wider">
+                    1,000₮
+                  </div>
+                </div>
+                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
+                  <div className="flex  items-center gap-[16px]">
+                    <div className="form-control">
+                      <label className="label cursor-pointer">
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          className="checkbox"
+                        />
+                      </label>
+                    </div>
+                    <img src="ForkKnife.svg" alt="" />
+                    <div className="flex flex-col">
+                      <p className="text-[16px]  font-medium tracking-wide text-black">
+                        Lending & Renting
+                      </p>
+                      <p className="text-12px text-gray-400">14:00</p>
+                    </div>
+                  </div>
+                  <div className="flex text-16px items-center text-green-500 tracking-wider">
+                    1,000₮
+                  </div>
+                </div>
+                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
+                  <div className="flex  items-center gap-[16px]">
+                    <div className="form-control">
+                      <label className="label cursor-pointer">
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          className="checkbox"
+                        />
+                      </label>
+                    </div>
+                    <img src="house.svg" alt="" />
+                    <div className="flex flex-col">
+                      <p className="text-[16px]  font-medium tracking-wide text-black">
+                        Lending & Renting
+                      </p>
+                      <p className="text-12px text-gray-400">14:00</p>
+                    </div>
+                  </div>
+                  <div className="flex text-16px items-center text-green-500 tracking-wider">
+                    1,000₮
+                  </div>
+                </div>
+              </div>
+              <div className="w-[1080px] h-[480px]  flex flex-col gap-[12px]">
+                <div className="text-[16px] font-semibold text-black">
+                  Yesterday
+                </div>
+                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
+                  <div className="flex  items-center gap-[16px]">
+                    <div className="form-control">
+                      <label className="label cursor-pointer">
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          className="checkbox"
+                        />
+                      </label>
+                    </div>
+                    <img src="ForkKnife.svg" alt="" />
+                    <div className="flex flex-col">
+                      <p className="text-[16px]  font-medium tracking-wide text-black">
+                        Lending & Renting
+                      </p>
+                      <p className="text-12px text-gray-400">14:00</p>
+                    </div>
+                  </div>
+                  <div className="flex text-16px items-center text-red-500 tracking-wider">
+                    -1,000₮
+                  </div>
+                </div>
+                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
+                  <div className="flex  items-center gap-[16px]">
+                    <div className="form-control">
+                      <label className="label cursor-pointer">
+                        <input
+                          type="checkbox"
+                          defaultChecked
+                          className="checkbox"
+                        />
+                      </label>
+                    </div>
+                    <img src="house.svg" alt="" />
+                    <div className="flex flex-col">
+                      <p className="text-[16px]  font-medium tracking-wide text-black">
+                        Lending & Renting
+                      </p>
+                      <p className="text-12px text-gray-400">14:00</p>
+                    </div>
+                  </div>
+                  <div className="flex text-16px items-center text-green-500 tracking-wider">
+                    1,000₮
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <Category
+        isvisible={showCategory}
+        onClose={() => setShowCategory(false)}
+      ></Category>
 
       <Modal isvisible={showModal} onClose={() => setShowModal(false)}></Modal>
     </Fragment>

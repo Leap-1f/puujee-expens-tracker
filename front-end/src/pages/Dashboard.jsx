@@ -4,44 +4,45 @@ import Example from "@/Components/barchart";
 
 function Dashboard() {
   return (
-    <div className="flex justify-center">
-      <div className="w-[1440px] h-[1148px] bg-gray-100">
-        <div className="navbar w-[100%] h-[80px] bg-white flex justify-between">
-          <div className="flex justify-center items-center gap-[24px]">
-            <img className="w-[27px]" src="vector.png" alt="" />
-            <Link
-              href={"/Dashboard"}
-              className="btn btn-ghost text-[16px] text-black"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href={"/Records"}
-              className="btn btn-ghost text-[16px] text-black"
-            >
-              Records
-            </Link>
-          </div>
-
-          <div className="flex-none gap-8">
-            <div className="form-control">
-              <div className="w-[99px] btn  items-center flex justify-center text-md border border-white bg-blue-600 text-white h-[42px] rounded-3xl">
-                +Records
-              </div>
+    <div className="flex justify-center  w-[100vw] bg-gray-200">
+      <div className=" w-[1440px] h-[1348px] bg-gray-200 items-center flex flex-col">
+        <div className="w-[100vw] bg-white flex  justify-center">
+          <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
+            <div className="flex justify-center items-center gap-[24px]">
+              <img className="w-[27px]" src="vector.png" alt="" />
+              <Link
+                href={"/Dashboard"}
+                className="btn btn-ghost text-[16px] text-black"
+              >
+                Dashboard
+              </Link>
+              <Link
+                href={"/Records"}
+                className="btn btn-ghost text-[16px] text-black"
+              >
+                Records
+              </Link>
             </div>
-            <div className="dropdown dropdown-end">
-              <div className="btn btn-ghost btn-circle avatar">
-                <div className="w-[200px] rounded-full">
-                  <img
-                    alt="Tailwind CSS Navbar component"
-                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                  />
+
+            <div className="flex-none gap-8">
+              <div className="form-control">
+                <div className="w-[99px] btn  items-center flex justify-center text-md border border-white bg-blue-600 text-white h-[42px] rounded-3xl">
+                  +Records
+                </div>
+              </div>
+              <div className="dropdown dropdown-end">
+                <div className="btn btn-ghost btn-circle avatar">
+                  <div className="w-[200px] rounded-full">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <div className="flex flex-col w-[100%] h-[90vh] py-[40px] gap-[50px] ">
           <div className="flex gap-[50px] ">
             <div className="flex w-[100%] h-[220px] bg-blue-600 hover:shadow-2xl duration-200 justify-between  gap-[20px] border rounded-2xl">
@@ -109,12 +110,83 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="flex gap-[50px] w-[100%] ]">
-            <div className="flex flex-col w-[100%] h-[55vh] bg-white border rounded-2xl ">
-              <div className="border-b-2 h-[8vh] px-[40px] py-[24px] flex gap-[20px] items-center">
-                <p className="font-semibold text-black text-[16px]">
-                  Last Records
-                </p>
+          <div className="flex flex-col  w-[100%] h-[456px] border">
+            <div className="border-b-2 w-[100%] h-[56px]  bg-white border px-[24px] flex gap-[20px] items-center">
+              <p className="font-semibold text-black text-[16px]">
+                Last Records
+              </p>
+            </div>
+
+            <div className="w-[100%] h-[400px] bg-white px-[24px]">
+              <div className="w-[100%] h-[80px] border-b border-gray-300 py-[20px] flex justify-between">
+                <div className="flex items-center gap-[16px]">
+                  <img src="house.svg" alt="" />
+                  <div className="flex flex-col">
+                    <p className="text-[16px]  font-medium tracking-wide text-black">
+                      Lending & Renting
+                    </p>
+                    <p className="text-12px text-gray-400">3 hours ago</p>
+                  </div>
+                </div>
+                <div className="flex text-16px items-center text-green-500 tracking-wider">
+                  -1,000₮
+                </div>
+              </div>
+              <div className="w-[100%] h-[80px] border-b border-gray-300 py-[20px] flex justify-between">
+                <div className="flex items-center gap-[16px]">
+                  <img src="house.svg" alt="" />
+                  <div className="flex flex-col">
+                    <p className="text-[16px]  font-medium tracking-wide text-black">
+                      Lending & Renting
+                    </p>
+                    <p className="text-12px text-gray-400">3 hours ago</p>
+                  </div>
+                </div>
+                <div className="flex text-16px items-center text-green-500 tracking-wider">
+                  1,000₮
+                </div>
+              </div>
+              <div className="w-[100%] h-[80px] border-b border-gray-300 py-[20px] flex justify-between">
+                <div className="flex items-center gap-[16px]">
+                  <img src="house.svg" alt="" />
+                  <div className="flex flex-col">
+                    <p className="text-[16px]  font-medium tracking-wide text-black">
+                      Lending & Renting
+                    </p>
+                    <p className="text-12px text-gray-300">3 hours ago</p>
+                  </div>
+                </div>
+                <div className="flex text-16px items-center text-green-500 tracking-wider">
+                  1,000₮
+                </div>
+              </div>
+              <div className="w-[100%] h-[80px] border-b border-gray-300 py-[20px] flex justify-between">
+                <div className="flex items-center gap-[16px]">
+                  <img src="house.svg" alt="" />
+                  <div className="flex flex-col">
+                    <p className="text-[16px]  font-medium tracking-wide text-black">
+                      Lending & Renting
+                    </p>
+                    <p className="text-12px text-gray-300">3 hours ago</p>
+                  </div>
+                </div>
+                <div className="flex text-16px items-center text-green-500 tracking-wider">
+                  1,000₮
+                </div>
+              </div>
+              <div className="w-[100%] h-[80px]  py-[20px] flex justify-between">
+                <div className="flex items-center gap-[16px]">
+                  <img src="house.svg" alt="" />
+                  <div className="flex flex-col">
+                    <p className="text-[16px]  font-medium tracking-wide text-black">
+                      Lending & Renting
+                    </p>
+                    <p className="text-12px text-gray-400">3 hours ago</p>
+                  </div>
+                </div>
+                <div className="flex text-16px items-center text-green-500 tracking-wider">
+                  1,000₮
+                </div>
               </div>
             </div>
           </div>

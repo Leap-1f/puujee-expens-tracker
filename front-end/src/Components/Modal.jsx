@@ -1,8 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import Dropdown from "./Dropdown";
+import { useState } from "react";
 
 function Modal({ isvisible, onClose }) {
+  const [activeTab, setActiveTab] = useState("Expense");
   if (!isvisible) return null;
 
   return (
@@ -32,78 +34,67 @@ function Modal({ isvisible, onClose }) {
           <div className="flex h-[400px] w-[400px] gap-[20px] flex-col">
             <div className="flex flex-col gap-[32px] p-[24px]">
               <div className="flex gap-[10px]">
-                <div className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-blue-600">
+                <div
+                  className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center items-center btn text-white ${
+                    activeTab === "Expense" ? "bg-blue-600" : "text-white"
+                  }`}
+                  onClick={() => setActiveTab("Expense")}
+                >
                   Expense
                 </div>
-                <Link
-                  className="w-[172px] h-[35px] rounded-3xl text-lg flex justify-center items-center btn text-white bg-gray-400"
-                  href={{
-                    pathname: "/Modal2",
-                  }}
-                >
-                  Income
+                <Link href={{}}>
+                  <p
+                    className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center items-center btn text-white ${
+                      activeTab === "Income" ? "bg-green-600" : " text-white"
+                    }`}
+                    onClick={() => setActiveTab("Income")}
+                  >
+                    Income
+                  </p>
                 </Link>
               </div>
               <input
                 type="number"
                 placeholder="Amount "
                 className="w-[348px] border-gray-400 h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px]"
-              >
-                {/* <div className="flex flex-col">
-                  <p className="text-md text-black">Amount</p>
-                  <p className="text-sm text-gray-400">₮000.00</p>
-                </div> */}
-              </input>
+              ></input>
 
               <div className="flex flex-col gap-[20px] justify-center items-center">
                 <div className="flex flex-col gap-[0px] h-[80px] w-[348px] justify-center">
-                  {/* <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm w-[348px] h-[48px]">
-                    <option disabled selected>
-                      Find or choose category
-                    </option>
-                    <option className="h-[56px] w-[360px] border flex  ">
-                      <img src="PlusCircle.svg" alt="" />
-                      <p> Add Category</p>
-                    </option>
-                    <option>USA-Dollar</option>
-                    <option>RUS-Ruble</option>
-                  </select> */}
-
                   <Dropdown></Dropdown>
                 </div>
                 <div className="flex 400px gap-[10px]">
-                  <div className="flex flex-col w-[168px]">
-                    <div className="flex flex-col">
-                      <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm">
-                        <option disabled selected>
-                          Oct 30, 2023
-                        </option>
-                        <input
-                          type="date"
-                          id="start"
-                          name="trip-start"
-                          value="2018-07-22"
-                          min="2018-01-01"
-                          max="2018-12-31"
-                        />
-                      </select>
+                  <div className="flex 400px gap-[10px]">
+                    <div className="flex flex-col w-[168px]">
+                      <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        className="input input-bordered"
+                        min="2018-01-01"
+                        max="2018-12-31"
+                      />
                     </div>
-                  </div>
-                  <div className="flex flex-col w-[168px]">
-                    <div className="flex flex-col">
-                      <select className="select select-primary bg-gray-100 text-gray-500 border-gray-400 text-sm">
-                        <option disabled selected>
-                          4:15 PM
-                        </option>
-                        <option>MNT-Mongolian Tugrik</option>
-                        <option>USA-Dollar</option>
-                        <option>RUS-Ruble</option>
-                      </select>
+                    <div className="flex flex-col w-[168px]">
+                      <label
+                        htmlFor="time"
+                        className="text-gray-200 text-sm"
+                      ></label>
+                      <input
+                        type="time"
+                        id="time"
+                        name="time"
+                        className="input input-bordered"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
-              <button className="h-[40px] rounded-lg text-white bg-blue-600 ">
+              <button
+                className={`h-[40px] rounded-lg text-white ${
+                  activeTab === "Expense" ? "bg-blue-600" : "bg-green-600"
+                }`}
+              >
                 Add Records
               </button>
             </div>
