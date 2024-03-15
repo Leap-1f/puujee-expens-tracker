@@ -1,10 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import Dropdown from "./Dropdown";
+import Frame from "./Frame";
 import { useState } from "react";
 
 function Category({ isvisible, onClose }) {
-  const [activeTab, setActiveTab] = useState("Expense");
   if (!isvisible) return null;
 
   return (
@@ -33,13 +32,13 @@ function Category({ isvisible, onClose }) {
         <div className="p-[24px]">
           <div className="w-[446px] h-[120px] flex flex-col gap-[30px]">
             <div className="flex justify-between">
-              <div className="flex justify-center items-center h-[48px] w-[84px] border-2 bg-gray-100 border-gray-300 rounded-xl">
-                <img src="house.svg" alt="" />
-                <img src="arrow_drop_down.svg" alt="" />
-              </div>
+              <Frame></Frame>
               <div className="w-[350px] h-[48px]  p-[16px] flex items-center justify-between border-2 bg-gray-100 border-gray-300 rounded-xl">
-                <p>Name</p>
-                <img src="arrow_drop_down.svg" alt="" />
+                <input
+                  type="text"
+                  placeholder="name"
+                  className="bg-gray-100"
+                ></input>
               </div>
             </div>
             <button className="w-[446px] h-[40px] border bg-green-500 rounded-xl tracking-wide text-white hover:scale-95 hover:duration-200 duration-200">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
+import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
 
 function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,21 +8,21 @@ function Dropdown() {
     <div className="relative flex flex-col items-center border border-gray-400 rounded-xl w-[350px] h-[60px]">
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="bg-gray-100 p-4 w-full rounded-xl flex justify-between text-md  border border-transparent active:border-blue-500 active:text-blue-500 duration-200"
+        className="bg-gray-100 p-4 w-full rounded-xl h-[60px] flex justify-between text-md  border border-transparent active:border-blue-500 active:text-blue-500 duration-300 avtive:text-blue-500"
       >
-        <div className="text-gray-400">Find or choose category</div>
-        <img src="arrow_drop_down.svg" alt="" />
-        {/* {isOpen ? (
-            
+        <p className="text-gray-400">Find or choose category</p>
+
+        {isOpen ? (
+          <AiOutlineCaretDown className="h-[24px]" />
         ) : (
-          <AiOutlineCaretDown className="h-8" />
-        )} */}
+          <AiOutlineCaretUp className="h-[24px]" />
+        )}
       </button>
 
       {isOpen && (
-        <div className="bg-gray-100 shadow-2xl absolute top-20 flex flex-col items-start rounded-lg p-2 w-full ">
+        <div className="bg-gray-100 shadow-2xl absolute top-[65px] flex flex-col items-start rounded-lg p-2 w-full ">
           <div className="flex w-full flex-col cursor-pointer overflow-x-hidden overflow-y-auto snap-y">
-            <div className="flex w-[350px] items-center gap-[25px] h-[56px] border-b-2 border-black hover:underline border-l-transparent hover:border-l-blue-500 border-l-4 tracking-wider  ">
+            <div className="flex w-[350px] items-center gap-[25px] h-[50px] border-b-2  border-black hover:underline border-l-transparent hover:border-l-blue-500 border-l-4 tracking-wider  ">
               <img src="PlusCircle.svg" alt="" />
               <div>
                 <p className="font-semibold">Add Category</p>

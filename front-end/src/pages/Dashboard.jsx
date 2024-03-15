@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import Example from "@/Components/barchart";
-
+import Example from "@/components/barchart";
+import Rounded from "@/components/Rounded";
 function Dashboard() {
   return (
     <div className="flex justify-center  w-[100vw] bg-gray-200">
@@ -12,13 +12,13 @@ function Dashboard() {
               <img className="w-[27px]" src="vector.png" alt="" />
               <Link
                 href={"/Dashboard"}
-                className="btn btn-ghost text-[16px] text-black"
+                className="btn btn-ghost text-[20px] text-black font-medium"
               >
                 Dashboard
               </Link>
               <Link
                 href={"/Records"}
-                className="btn btn-ghost text-[16px] text-black"
+                className="btn btn-ghost text-[20px] text-black font-medium"
               >
                 Records
               </Link>
@@ -93,7 +93,7 @@ function Dashboard() {
             </div>
           </div>
           <div className="flex gap-[50px] w-[100%]  h-[300px]   ">
-            <div className="flex flex-col w-[50%]  hover:shadow-xl duration-200 bg-white border  h-[300px]   rounded-2xl">
+            <div className="flex flex-col w-[50%]  hover:shadow-xl duration-200 bg-white      rounded-2xl">
               <div className="border-b-2 h-[56px] px-[24px] py-[20px] flex gap-[20px] items-center">
                 <p className="font-semibold text-black text-[16px]">
                   Income - Expense
@@ -110,14 +110,14 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col  w-[100%] h-[456px] border">
-            <div className="border-b-2 w-[100%] h-[56px]  bg-white border px-[24px] flex gap-[20px] items-center">
+          <div className="flex flex-col  w-[100%] h-[456px] rounded-b-xl">
+            <div className="border-b w-[100%] h-[56px] rounded-t-xl   bg-white border px-[24px] flex gap-[20px] items-center">
               <p className="font-semibold text-black text-[16px]">
                 Last Records
               </p>
             </div>
 
-            <div className="w-[100%] h-[400px] bg-white px-[24px]">
+            <div className="w-[100%] h-[400px] bg-white px-[24px]  ">
               <div className="w-[100%] h-[80px] border-b border-gray-300 py-[20px] flex justify-between">
                 <div className="flex items-center gap-[16px]">
                   <img src="house.svg" alt="" />
@@ -153,7 +153,7 @@ function Dashboard() {
                     <p className="text-[16px]  font-medium tracking-wide text-black">
                       Lending & Renting
                     </p>
-                    <p className="text-12px text-gray-300">3 hours ago</p>
+                    <p className="text-12px text-gray-400">3 hours ago</p>
                   </div>
                 </div>
                 <div className="flex text-16px items-center text-green-500 tracking-wider">
@@ -167,7 +167,7 @@ function Dashboard() {
                     <p className="text-[16px]  font-medium tracking-wide text-black">
                       Lending & Renting
                     </p>
-                    <p className="text-12px text-gray-300">3 hours ago</p>
+                    <p className="text-12px text-gray-400">3 hours ago</p>
                   </div>
                 </div>
                 <div className="flex text-16px items-center text-green-500 tracking-wider">

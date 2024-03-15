@@ -35,28 +35,29 @@ function Modal({ isvisible, onClose }) {
             <div className="flex flex-col gap-[32px] p-[24px]">
               <div className="flex gap-[10px]">
                 <div
-                  className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center items-center btn text-white ${
-                    activeTab === "Expense" ? "bg-blue-600" : "text-white"
+                  className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center items-center btn btn-active text-white ${
+                    activeTab === "Expense" ? "bg-blue-600" : "text-black"
                   }`}
                   onClick={() => setActiveTab("Expense")}
                 >
                   Expense
                 </div>
-                <Link href={{}}>
+                <div>
                   <p
-                    className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center items-center btn text-white ${
-                      activeTab === "Income" ? "bg-green-600" : " text-white"
+                    className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center btn items-center btn-active text-white ${
+                      activeTab === "Income" ? "bg-green-600" : " text-black"
                     }`}
                     onClick={() => setActiveTab("Income")}
                   >
                     Income
                   </p>
-                </Link>
+                </div>
               </div>
               <input
                 type="number"
                 placeholder="Amount "
-                className="w-[348px] border-gray-400 h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px]"
+                className="w-[348px] border-gray-400 h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px] "
+                onClick={() => setActiveTab("Income")}
               ></input>
 
               <div className="flex flex-col gap-[20px] justify-center items-center">
@@ -70,7 +71,14 @@ function Modal({ isvisible, onClose }) {
                         type="date"
                         id="date"
                         name="date"
-                        className="input input-bordered"
+                        className={`input input-bordered ${
+                          activeTab === "Income"
+                            ? "border-green-600"
+                            : "text-black" || activeTab === "Expense"
+                            ? " border-blue-600"
+                            : "text-black"
+                        }`}
+                        onClick={() => setActiveTab("Income")}
                         min="2018-01-01"
                         max="2018-12-31"
                       />
@@ -84,7 +92,14 @@ function Modal({ isvisible, onClose }) {
                         type="time"
                         id="time"
                         name="time"
-                        className="input input-bordered"
+                        className={`input input-bordered ${
+                          activeTab === "Income"
+                            ? "border-green-600"
+                            : "text-black" || activeTab === "Expense"
+                            ? " border-blue-600"
+                            : "text-black"
+                        }`}
+                        onClick={() => setActiveTab("Income")}
                       />
                     </div>
                   </div>
@@ -103,7 +118,15 @@ function Modal({ isvisible, onClose }) {
             <div>
               <div className="flex flex-col gap-[4px]">
                 <p className="text-lg text-black">Payee</p>
-                <select className="select select-primary bg-gray-100 text-sm text-gray-600 border-gray-400 w-[348px] h-[48px]">
+                <select
+                  className={`select select-primary bg-gray-100 text-sm text-gray-600 border-gray-400 w-[348px] h-[48px] ${
+                    activeTab === "Income"
+                      ? "border-green-600"
+                      : "text-black" || activeTab === "Expense"
+                      ? " border-blue-600"
+                      : "text-black"
+                  }`}
+                >
                   <option disabled selected>
                     Write here
                   </option>
@@ -116,7 +139,13 @@ function Modal({ isvisible, onClose }) {
             <div className="flex flex-col">
               <p className="text-xl text-black"></p>
               <textarea
-                className="w-[348px] h-[280px] border-gray-400 bg-gray-100 border rounded-xl p-[20px]"
+                className={`w-[348px] h-[280px] border-gray-400 bg-gray-100 border rounded-xl p-[20px] ${
+                  activeTab === "Income"
+                    ? "border-green-600"
+                    : " text-black " || activeTab === "Expense"
+                    ? " border-blue-600"
+                    : "text-black"
+                }`}
                 placeholder="Write here"
               ></textarea>
             </div>

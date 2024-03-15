@@ -53,7 +53,7 @@ function Example() {
       {/* Bar chart */}
 
       <div className="w-[700px] h-[242px]  ">
-        <div className=" border-gray-400  rounded-xl  w-[700px] h-[242px]  -">
+        <div className=" border-gray-400  rounded-xl  w-[700px] h-[242px]  shadow-xl">
           <canvas id="myChart"></canvas>
         </div>
       </div>
