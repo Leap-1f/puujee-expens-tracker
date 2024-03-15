@@ -57,7 +57,6 @@ function Modal({ isvisible, onClose }) {
                 type="number"
                 placeholder="Amount "
                 className="w-[348px] border-gray-400 h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px] "
-                onClick={() => setActiveTab("Income")}
               ></input>
 
               <div className="flex flex-col gap-[20px] justify-center items-center">

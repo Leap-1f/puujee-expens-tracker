@@ -8,7 +8,67 @@ function Records() {
   const [selectedTab, setSelectedTab] = useState("all");
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth() + 1); // Month is zero-based
-
+  const [transactions, setTransactions] = useState([
+    {
+      title: "Today",
+      data: [
+        {
+          id: 1,
+          icon: "house.svg",
+          description: "Lending & Renting",
+          time: "14:00",
+          amount: "1,000₮",
+        },
+        {
+          id: 2,
+          icon: "ForkKnife.svg",
+          description: "Lending & Renting",
+          time: "14:00",
+          amount: "1,000₮",
+        },
+        {
+          id: 3,
+          icon: "house.svg",
+          description: "Lending & Renting",
+          time: "14:00",
+          amount: "1,000₮",
+        },
+        {
+          id: 4,
+          icon: "house.svg",
+          description: "Lending & Renting",
+          time: "14:00",
+          amount: "1,000₮",
+        },
+      ],
+    },
+    {
+      title: "Yesterday",
+      data: [
+        {
+          id: 4,
+          icon: "ForkKnife.svg",
+          description: "Lending & Renting",
+          time: "14:00",
+          amount: "-1,000₮",
+        },
+        {
+          id: 5,
+          icon: "house.svg",
+          description: "Lending & Renting",
+          time: "14:00",
+          amount: "1,000₮",
+        },
+        {
+          id: 6,
+          icon: "house.svg",
+          description: "Lending & Renting",
+          time: "14:00",
+          amount: "1,000₮",
+        },
+      ],
+    },
+  ]);
   const handlePreviousMonth = () => {
     setMonth((prevMonth) => {
       if (prevMonth === 1) {
@@ -45,27 +105,27 @@ function Records() {
   ];
   return (
     <Fragment>
-      <div className="flex justify-center h-[1250px] w-[100vw] bg-gray-200">
-        <div className="w-[1440px]   bg-gray-200  flex items-center flex-col">
+      <div className="flex justify-center h-[1250px] w-[100vw] bg-gray-100">
+        <div className="w-[1440px]   bg-gray-100  flex items-center flex-col">
           <div className="w-[100vw] bg-white flex  justify-center">
             <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
               <div className="flex justify-center items-center gap-[24px]">
                 <Link href={"/Dashboard"}>
                   <img
-                    className="cursor-pointer w-[27px]"
+                    className="cursor-pointer w-[27px] "
                     src="vector.png"
                     alt=""
                   />
                 </Link>
                 <Link
                   href={"/Dashboard"}
-                  className="btn btn-ghost text-[20px] text-black font-medium"
+                  className="w-[150px] h-[40px] flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
                 >
                   Dashboard
                 </Link>
                 <Link
                   href={"/Records"}
-                  className="btn btn-ghost text-[20px] text-black font-medium"
+                  className="w-[150px] h-[40px] flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
                 >
                   Records
                 </Link>
@@ -73,19 +133,40 @@ function Records() {
 
               <div className="flex-none gap-8">
                 <div className="form-control">
-                  <div className="w-[99px] btn  items-center flex justify-center text-md border border-white bg-blue-600 text-white h-[42px] rounded-3xl">
+                  <div className="w-[150px] h-[40px] flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black  hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600">
                     +Records
                   </div>
                 </div>
                 <div className="dropdown dropdown-end">
-                  <div className="btn btn-ghost btn-circle avatar">
-                    <div className="w-[200px] rounded-full">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="w-10 rounded-full">
                       <img
                         alt="Tailwind CSS Navbar component"
                         src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                       />
                     </div>
                   </div>
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li>
+                      <a className="justify-between">
+                        Profile
+                        <span className="badge">New</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>Settings</a>
+                    </li>
+                    <li>
+                      <a>Logout</a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -230,21 +311,25 @@ function Records() {
               </div>
             </div>
             <div className="flex w-[1100px] flex-col h-[100vh] gap-[40px] ">
-              <div className="flex justify-between w-[1100px] h-[48px] py-[24px] pr-[20px] pl-[130px]">
-                <div className="join h-[48px]">
+              {/* Map over the transactions */}{" "}
+              <div className="flex justify-between w-[1100px] h-[48px] py-[24px] pr-[20px] ">
+                <div className=" h-[48px] bf flex items-center justify-center gap-[15px]">
                   <button
-                    className="join-item btn"
+                    className="w-[30px] h-[30px] hover:scale-95 duration-200 rounded-md bg-gray-200 flex justify-center items-center text-black text-xl border-gray-300 hover:text-blue-600 hover:border-blue-600 border active:text-green-600 active:border-green-600"
                     onClick={handlePreviousMonth}
                   >
                     «
                   </button>
-                  <button className="join-item btn">{`${year}-${month}`}</button>
-                  <button className="join-item btn" onClick={handleNextMonth}>
+                  <button className=" w-[100px] h-[30px] text-[xl] text-black ">{`${year}-${month}`}</button>
+                  <button
+                    className="w-[30px] h-[30px]  rounded-md hover:scale-95 duration-200 flex justify-center bg-gray-200 items-center  text-black text-xl border-gray-300 hover:text-blue-600 hover:border-blue-600 border active:text-green-600 active:border-green-600"
+                    onClick={handleNextMonth}
+                  >
                     »
                   </button>
                 </div>
 
-                <select class="select select-primary bg-gray-100 text-[16px]  font-medium text-black  border-gray-300 w-[180px] h-[48px] ">
+                <select class="select select-primary bg-white border-gray-400 text-[16px]  font-medium text-black   w-[180px] h-[48px] ">
                   <option disabled selected>
                     Newest fisrt
                   </option>
@@ -253,142 +338,50 @@ function Records() {
                   <option>RUS-Ruble</option>
                 </select>
               </div>
-              <div className="w-[1080px] h-[50px] border border-gray-300 rounded-xl bg-white flex justify-between py-[10px] px-[24px]">
-                <div className="flex gap-[16px] justify-center items-center">
-                  <input
-                    type="checkbox"
-                    defaultChecked
-                    className="checkbox w-[20px] h-[20px] border-gray-300"
-                  />
-                  <p className="text-lg text-black">Select all</p>
+              {transactions.map((section, index) => (
+                <div className="flex flex-col gap-[24px]" key={index}>
+                  <div className="text-[16px]  font-semibold text-black">
+                    {section.title}
+                  </div>
+                  {/* Map over the data within each section */}
+                  {section.data.map((transaction) => (
+                    <div
+                      key={transaction.id}
+                      className="w-[100%]  cursor-pointer h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between"
+                    >
+                      <div className="flex items-center gap-[16px]">
+                        <div className="form-control">
+                          <label className="label cursor-pointer">
+                            <input
+                              type="checkbox"
+                              defaultChecked
+                              className="checkbox"
+                            />
+                          </label>
+                        </div>
+                        <img src={transaction.icon} alt="" />
+                        <div className="flex flex-col">
+                          <p className="text-[16px]  font-medium tracking-wide text-black">
+                            {transaction.description}
+                          </p>
+                          <p className="text-12px text-gray-400">
+                            {transaction.time}
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        className={`flex text-16px items-center ${
+                          transaction.amount.startsWith("-")
+                            ? "text-red-500"
+                            : "text-green-500"
+                        } tracking-wider`}
+                      >
+                        {transaction.amount}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-center">35,500₮</div>
-              </div>
-              <div className="w-[1080px] h-[404px] flex flex-col gap-[12px]">
-                <div className="text-[16px] font-semibold text-black">
-                  Today
-                </div>
-                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
-                  <div className="flex  items-center gap-[16px]">
-                    <div className="form-control">
-                      <label className="label cursor-pointer">
-                        <input
-                          type="checkbox"
-                          defaultChecked
-                          className="checkbox"
-                        />
-                      </label>
-                    </div>
-                    <img src="house.svg" alt="" />
-                    <div className="flex flex-col">
-                      <p className="text-[16px]  font-medium tracking-wide text-black">
-                        Lending & Renting
-                      </p>
-                      <p className="text-12px text-gray-400">14:00</p>
-                    </div>
-                  </div>
-                  <div className="flex text-16px items-center text-green-500 tracking-wider">
-                    1,000₮
-                  </div>
-                </div>
-                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
-                  <div className="flex  items-center gap-[16px]">
-                    <div className="form-control">
-                      <label className="label cursor-pointer">
-                        <input
-                          type="checkbox"
-                          defaultChecked
-                          className="checkbox"
-                        />
-                      </label>
-                    </div>
-                    <img src="ForkKnife.svg" alt="" />
-                    <div className="flex flex-col">
-                      <p className="text-[16px]  font-medium tracking-wide text-black">
-                        Lending & Renting
-                      </p>
-                      <p className="text-12px text-gray-400">14:00</p>
-                    </div>
-                  </div>
-                  <div className="flex text-16px items-center text-green-500 tracking-wider">
-                    1,000₮
-                  </div>
-                </div>
-                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
-                  <div className="flex  items-center gap-[16px]">
-                    <div className="form-control">
-                      <label className="label cursor-pointer">
-                        <input
-                          type="checkbox"
-                          defaultChecked
-                          className="checkbox"
-                        />
-                      </label>
-                    </div>
-                    <img src="house.svg" alt="" />
-                    <div className="flex flex-col">
-                      <p className="text-[16px]  font-medium tracking-wide text-black">
-                        Lending & Renting
-                      </p>
-                      <p className="text-12px text-gray-400">14:00</p>
-                    </div>
-                  </div>
-                  <div className="flex text-16px items-center text-green-500 tracking-wider">
-                    1,000₮
-                  </div>
-                </div>
-              </div>
-              <div className="w-[1080px] h-[480px]  flex flex-col gap-[12px]">
-                <div className="text-[16px] font-semibold text-black">
-                  Yesterday
-                </div>
-                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
-                  <div className="flex  items-center gap-[16px]">
-                    <div className="form-control">
-                      <label className="label cursor-pointer">
-                        <input
-                          type="checkbox"
-                          defaultChecked
-                          className="checkbox"
-                        />
-                      </label>
-                    </div>
-                    <img src="ForkKnife.svg" alt="" />
-                    <div className="flex flex-col">
-                      <p className="text-[16px]  font-medium tracking-wide text-black">
-                        Lending & Renting
-                      </p>
-                      <p className="text-12px text-gray-400">14:00</p>
-                    </div>
-                  </div>
-                  <div className="flex text-16px items-center text-red-500 tracking-wider">
-                    -1,000₮
-                  </div>
-                </div>
-                <div className="w-[100%] h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between">
-                  <div className="flex  items-center gap-[16px]">
-                    <div className="form-control">
-                      <label className="label cursor-pointer">
-                        <input
-                          type="checkbox"
-                          defaultChecked
-                          className="checkbox"
-                        />
-                      </label>
-                    </div>
-                    <img src="house.svg" alt="" />
-                    <div className="flex flex-col">
-                      <p className="text-[16px]  font-medium tracking-wide text-black">
-                        Lending & Renting
-                      </p>
-                      <p className="text-12px text-gray-400">14:00</p>
-                    </div>
-                  </div>
-                  <div className="flex text-16px items-center text-green-500 tracking-wider">
-                    1,000₮
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
