@@ -119,13 +119,13 @@ function Records() {
                 </Link>
                 <Link
                   href={"/Dashboard"}
-                  className="w-[150px] h-[40px] flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
+                  className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 tracking-wide flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
                 >
                   Dashboard
                 </Link>
                 <Link
                   href={"/Records"}
-                  className="w-[150px] h-[40px] flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
+                  className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 tracking-wide flex items-center justify-center rounded-xl border-black  hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
                 >
                   Records
                 </Link>
@@ -133,7 +133,7 @@ function Records() {
 
               <div className="flex-none gap-8">
                 <div className="form-control">
-                  <div className="w-[150px] h-[40px] flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black  hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600">
+                  <div className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 tracking-wide flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black  hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600">
                     +Records
                   </div>
                 </div>
@@ -144,28 +144,33 @@ function Records() {
                     className="btn btn-ghost btn-circle avatar"
                   >
                     <div className="w-10 rounded-full">
-                      <img
-                        alt="Tailwind CSS Navbar component"
-                        src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                      />
+                      <img alt="Tailwind CSS Navbar component" src="wo.jpeg" />
                     </div>
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52"
                   >
-                    <li>
-                      <a className="justify-between">
-                        Profile
-                        <span className="badge">New</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>Settings</a>
-                    </li>
-                    <li>
-                      <a>Logout</a>
-                    </li>
+                    <Link
+                      className="flex justify-between items-center hover:bg-gray-200 duration-200 hover:rounded-lg"
+                      href={""}
+                    >
+                      <p className="p-2">Profile</p>
+                      <span className="badge">New</span>
+                    </Link>
+
+                    <Link
+                      className="hover:bg-gray-200 duration-200 hover:rounded-lg"
+                      href={"/Login"}
+                    >
+                      <p className="p-2">Settings</p>
+                    </Link>
+                    <Link
+                      className="hover:bg-gray-200 duration-200 hover:rounded-lg"
+                      href={"/Login"}
+                    >
+                      <p className="p-2">Logout</p>
+                    </Link>
                   </ul>
                 </div>
               </div>
@@ -174,7 +179,9 @@ function Records() {
           <div className="flex    gap-[50px] py-[40px] ">
             <div className="bg-white border p-[24px] rounded-2xl flex flex-col gap-[24px] w-[auto] h-[1080px]">
               <div className="flex flex-col gap-[24px]">
-                <p className="text-black font-bold text-[24px]">Records</p>
+                <p className="text-black font-semibold text-[24px] tracking-wide ">
+                  Records
+                </p>
                 <button
                   className=" h-[32px] rounded-xl text-white bg-blue-600 text-md"
                   onClick={() => setShowModal(true)}
@@ -186,7 +193,7 @@ function Records() {
                   <input
                     type="text"
                     placeholder="Search"
-                    className="bg-gray-300 h-[32px] text-black w-[250px] text-[16px] rounded-xl input input-bordered"
+                    className="bg-gray-100 tracking-wide h-[32px] text-black w-[250px] text-[16px] rounded-xl input input-bordered"
                   />
                 </div>
                 <div className="flex flex-col  gap-[24px]">
@@ -205,7 +212,7 @@ function Records() {
                       />
                       <label
                         htmlFor="all"
-                        className="text-md cursor-pointer text-black hover:underline"
+                        className="text-md cursor-pointer tracking-wide text-black hover:underline"
                       >
                         All
                       </label>
@@ -221,7 +228,7 @@ function Records() {
                       />
                       <label
                         htmlFor="income"
-                        className="text-md text-black cursor-pointer hover:underline"
+                        className="text-md text-black tracking-wide cursor-pointer hover:underline"
                       >
                         Income
                       </label>
@@ -237,7 +244,7 @@ function Records() {
                       />
                       <label
                         htmlFor="expense"
-                        className="text-md text-black cursor-pointer hover:underline"
+                        className="text-md text-black tracking-wide cursor-pointer hover:underline"
                       >
                         Expense
                       </label>
@@ -246,8 +253,11 @@ function Records() {
                 </div>
                 <div className="flex flex-col gap-[16px]  ">
                   <div className="text-[16px] gap-[10px]  flex-col font-bold text-black flex justify-between">
-                    <div className="text-[16px] font-semibold text-black">
-                      Category
+                    <div className="text-[16px] flex font-semibold tracking-wide text-black justify-between">
+                      <p>Category</p>
+                      <p className="text-[16px] text-gray-400 tracking-wide font-normal ">
+                        clear
+                      </p>
                     </div>
                     {categories.map((category) => (
                       <div
@@ -256,7 +266,7 @@ function Records() {
                       >
                         <div className="flex gap-[20px]">
                           <img src="Leading icon (3).svg" alt="" />
-                          <p className="text-[16px] font-normal hover:underline">
+                          <p className="text-[16px] font-normal hover:underline ">
                             {category.name}
                           </p>
                         </div>
@@ -275,22 +285,22 @@ function Records() {
                           alt=""
                         />
                         <p
-                          className="text-[16px] text-black font-semibold hover:underline"
+                          className="text-[16px] text-black font-semibold tracking-wide hover:underline"
                           onClick={() => setShowCategory(true)}
                         >
                           Add Category
                         </p>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-[10px] py-[24px]">
-                      <div className=" text-[16px] font-semibold text-black">
+                    <div className="flex flex-col gap-[12px] py-[24px]">
+                      <div className=" text-[16px] font-semibold text-black tracking-wide">
                         <p>Amount Range</p>
                       </div>
                       <div className="flex gap-[16px]">
-                        <div className="h-[48px] rounded-lg text-black border font-medium border-gray-400 w-[114px] flex justify-center items-center bg-gray-200  hover:text-red-400 hover:duration-300">
+                        <div className="h-[40px] rounded-lg text-black border font-medium border-gray-400 w-[114px] flex justify-center items-center bg-gray-200  hover:text-red-400 hover:duration-300">
                           0
                         </div>
-                        <div className="h-[48px] tracking-wide rounded-lg text-black border font-medium border-gray-400 w-[114px] flex justify-center items-center bg-gray-200  hover:text-red-400 hover:duration-300">
+                        <div className="h-[40px] tracking-wide rounded-lg text-black border font-medium border-gray-400 w-[114px] flex justify-center items-center bg-gray-200  hover:text-red-400 hover:duration-300">
                           1000
                         </div>
                       </div>
@@ -301,7 +311,7 @@ function Records() {
                         value="50"
                         className="range range-sm"
                       />
-                      <div className="w-full flex justify-between text-xs font-medium text-black px-2">
+                      <div className="w-full flex justify-between text-[16px] font-normal text-black px-2">
                         <span>0</span>
                         <span>1000</span>
                       </div>
@@ -329,7 +339,7 @@ function Records() {
                   </button>
                 </div>
 
-                <select class="select select-primary bg-white border-gray-400 text-[16px]  font-medium text-black   w-[180px] h-[48px] ">
+                <select class="select select-primary tracking-wide bg-white border-gray-400 text-[16px]  font-medium text-black   w-[180px] h-[48px] ">
                   <option disabled selected>
                     Newest fisrt
                   </option>
@@ -340,7 +350,7 @@ function Records() {
               </div>
               {transactions.map((section, index) => (
                 <div className="flex flex-col gap-[24px]" key={index}>
-                  <div className="text-[16px]  font-semibold text-black">
+                  <div className="text-[16px] tracking-wide  font-semibold text-black">
                     {section.title}
                   </div>
                   {/* Map over the data within each section */}
@@ -361,7 +371,7 @@ function Records() {
                         </div>
                         <img src={transaction.icon} alt="" />
                         <div className="flex flex-col">
-                          <p className="text-[16px]  font-medium tracking-wide text-black">
+                          <p className="text-[16px]  tracking-wide text-black">
                             {transaction.description}
                           </p>
                           <p className="text-12px text-gray-400">

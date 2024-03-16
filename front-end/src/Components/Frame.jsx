@@ -59,7 +59,8 @@ function Frame() {
     <div>
       <div
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex relative justify-center items-center h-[48px] w-[84px] border-2 bg-gray-100 border-gray-300 rounded-xl gap-[10px]"
+        className="flex relative justify-center items-center h-[48px] w-[84px] border-2 bg-gray-100 border-gray-300 rounded-xl gap-[10px] active:text-green-600 active:border-green-600
+        -600"
       >
         <img src="house.svg" alt="" />
         {isOpen ? (
@@ -69,7 +70,7 @@ function Frame() {
         )}
       </div>
       {isOpen && (
-        <div className="bg-gray-100 shadow-2xl absolute top-[480px] flex flex-wrap items-start rounded-lg  w-[312px] h-[336px] px-[24px] py-[20px]">
+        <div className="bg-gray-100 shadow-2xl absolute top-[6 80px] flex flex-wrap items-start rounded-lg  w-[312px] h-[336px] px-[24px] py-[20px]">
           <div className="flex w-full flex-col cursor-pointer gap-[24px] overflow-y-auto snap-y">
             <div className="flex w-[24px]  gap-[24px] ">
               {/* Map over the imageFilenames array to render each image */}
@@ -129,14 +130,14 @@ function Frame() {
             </div>
 
             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="264"
-                height="2"
-                viewBox="0 0 264 2"
-                fill="none"
-              >
-                <path opacity="0.1" d="M0 1H264" stroke="black" />
-              </svg>
+              xmlns="http://www.w3.org/2000/svg"
+              width="264"
+              height="2"
+              viewBox="0 0 264 2"
+              fill="none"
+            >
+              <path opacity="0.1" d="M0 1H264" stroke="black" />
+            </svg>
             <div className="flex w-[20px]  gap-[20px] ">
               {/* Map over the imageFilenames array to render each image */}
               {imageFilenames6.map((filename, index) => (

@@ -32,13 +32,13 @@ function Dropdown() {
 
       {isOpen && (
         <div className="bg-gray-100 shadow-2xl absolute top-[65px] flex flex-col items-start rounded-lg p-2 w-full ">
-          <div className="flex w-full flex-col cursor-pointer overflow-x-hidden overflow-y-auto snap-y">
+          <div className="flex w-full flex-col cursor-pointer overflow-x-hiddenoverflow-y-auto snap-y">
             {/* Map over the categories array to render each category */}
             {categories.map((category, index) => (
               <div
                 key={index}
-                className={`flex w-[350px] items-center gap-[25px] h-[40px] hover:underline hover:underline-offset-8  border-l-transparent hover:border-l-${
-                  category.color || "blue-500"
+                className={`flex w-[350px] items-center gap-[25px] h-[40px] hover:underline  hover:underline-offset-8  border-l-transparent hover:border-l-${
+                  category.color || "blue-500" || "red" || "green"
                 } border-l-4 tracking-wider`}
               >
                 <img src={category.icon} alt="" />
