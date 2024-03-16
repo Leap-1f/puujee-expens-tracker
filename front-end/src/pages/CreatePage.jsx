@@ -35,7 +35,7 @@ function CreatePage() {
       <div className="w-[50%] flex justify-center items-center bg-white pl-[222px] pr-[126px] ">
         <div className="w-[384px] h-[555px]  flex flex-col items-center gap-[40px]">
           <div className="flex p-[5px] items-center gap-[10px] ">
-            <img className="w-[23px] h-[23px]" src="vector.png" alt="" />
+            <img className="w-[23px] h-[23px]" src="vector (1).svg" alt="" />
             <img src="Geld (3).svg" alt="" />
           </div>{" "}
           <div className="flex flex-col items-center gap-[8px]">

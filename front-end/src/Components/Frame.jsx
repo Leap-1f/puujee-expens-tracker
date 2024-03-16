@@ -6,8 +6,8 @@ function Frame() {
 
   // Define an array of image filenames
   const imageFilenames = [
-    "house (1).svg",
-    "houseline.svg",
+    "Baseball.svg",
+    "Exclude.svg",
     "IdentificationBadge.svg",
     "IdentificationCard.svg",
     "Ladder.svg",
@@ -19,7 +19,7 @@ function Frame() {
     "MagnifyingGlassPlus.svg",
     "Microphone.svg",
     "MicrosoftExcelLogo.svg",
-    "NotePad.svg",
+    "OrangeSlice.svg",
   ];
   const imageFilenames3 = [
     "ListPlus.svg",
@@ -62,7 +62,7 @@ function Frame() {
         className="flex relative justify-center items-center h-[48px] w-[84px] border-2 bg-gray-100 border-gray-300 rounded-xl gap-[10px] active:text-green-600 active:border-green-600
         -600"
       >
-        <img src="house.svg" alt="" />
+        <img src="Baseball.svg" alt="" />
         {isOpen ? (
           <AiOutlineCaretUp className="h-[24px]" />
         ) : (

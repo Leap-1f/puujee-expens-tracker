@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Fragment, useState } from "react";
-import Modal from "@/Components/Modal";
-import Category from "@/Components/Category";
+// import Modal from "@/Components/Modal";
+// import Category from "@/Components/Category";
+import Modal from "@/components/Modal";
+import Category from "@/components/Category";
 function Records() {
   const [showModal, setShowModal] = useState(false);
   const [showCategory, setShowCategory] = useState(false);
@@ -113,19 +115,19 @@ function Records() {
                 <Link href={"/Dashboard"}>
                   <img
                     className="cursor-pointer w-[27px] "
-                    src="vector.png"
+                    src="vector (1).svg"
                     alt=""
                   />
                 </Link>
                 <Link
                   href={"/Dashboard"}
-                  className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 tracking-wide flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
+                  className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r rounded-lg from-pink-500 to-violet-500 tracking-wide flex items-center justify-center border-t-orange-500 border-b-emerald-500 border-e-cyan-400 border-s-pink-600 hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border-2 text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
                 >
                   Dashboard
                 </Link>
                 <Link
                   href={"/Records"}
-                  className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 tracking-wide flex items-center justify-center rounded-xl border-black  hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
+                  className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r rounded-lg from-pink-500 to-violet-500 tracking-wide flex items-center justify-center border-t-orange-500 border-b-emerald-500 border-e-cyan-400 border-s-pink-600 hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border-2 text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
                 >
                   Records
                 </Link>
@@ -133,7 +135,10 @@ function Records() {
 
               <div className="flex-none gap-8">
                 <div className="form-control">
-                  <div className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 tracking-wide flex items-center justify-center rounded-xl border-black hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border text-[16px] text-black  hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600">
+                  <div
+                    onClick={() => setShowModal(true)}
+                    className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r rounded-lg from-pink-500 to-violet-500 tracking-wide flex items-center justify-center border-t-orange-500 border-b-emerald-500 border-e-cyan-400 border-s-pink-600 hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border-2 text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"
+                  >
                     +Records
                   </div>
                 </div>
@@ -357,7 +362,7 @@ function Records() {
                   {section.data.map((transaction) => (
                     <div
                       key={transaction.id}
-                      className="w-[100%]  cursor-pointer h-[64px] border border-gray-300 rounded-xl bg-white px-[24px] py-[12px] flex items-center justify-between"
+                      className="w-[100%]  cursor-pointer h-[64px] border border-gray-300 rounded-xl hover:shadow-md duration-150 bg-white px-[24px] py-[12px] flex items-center justify-between"
                     >
                       <div className="flex items-center gap-[16px]">
                         <div className="form-control">

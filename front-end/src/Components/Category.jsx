@@ -37,11 +37,11 @@ function Category({ isvisible, onClose }) {
                 <input
                   type="text"
                   placeholder="name"
-                  className="bg-gray-100"
+                  className="bg-gray-100 w-[350px]"
                 ></input>
               </div>
             </div>
-            <button className="w-[446px] h-[40px] border bg-green-500 rounded-xl tracking-wide text-white hover:scale-95 hover:duration-200 duration-200">
+            <button className="w-[446px] h-[40px] border bg-green-500 rounded-xl tracking-wide text-white hover:shadow-xl  ">
               Confirm
             </button>
           </div>
