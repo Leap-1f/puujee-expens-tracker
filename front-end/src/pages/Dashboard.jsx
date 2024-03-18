@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Chart from "chart.js/auto";
-import Example from "@/components/barchart";
+import Example from "@/components/Chart/barchart";
 import DonutChart from "@/components/DonutChart";
 import Modal from "@/components/Modal";
 function Dashboard() {

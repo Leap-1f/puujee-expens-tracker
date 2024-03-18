@@ -1,17 +1,31 @@
 import Link from "next/link";
+import * as Yup from "yup"; // Import Yup
 import { useState } from "react";
+
 function CreatePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
 
+  // Define Yup schema for form validation
+  const schema = Yup.object().shape({
+    name: Yup.string().required("Username is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    password: Yup.string().required("Password is required"),
+    rePassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
+      .required("Password confirm is required"),
+  });
+
   const signUp = async () => {
-    if (password !== rePassword) {
-      setError("Passwords do not match");
-      return;
-    }
     try {
+      // Validate form data using Yup schema
+      await schema.validate(
+        { name, email, password, rePassword },
+        { abortEarly: false }
+      );
+
       const response = await fetch("http://localhost:8080/api/signUp", {
         method: "POST",
         headers: {
@@ -20,16 +34,15 @@ function CreatePage() {
         },
         body: JSON.stringify({ name, email, password, rePassword }),
       });
+
       const newData = await response.json();
       console.log(newData);
     } catch (error) {
-      console.error("Error creating data:", error);
+      // Handle validation errors
+      console.error("Validation error:", error);
     }
-    console.log(signUp);
   };
-  const addUser = () => {
-    signUp();
-  };
+
   return (
     <div className="w-[100%] h-[100vh] flex justify-center">
       <div className="w-[50%] flex justify-center items-center bg-white pl-[222px] pr-[126px] ">
@@ -94,7 +107,7 @@ function CreatePage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className=""
-                  placeholder="password"
+                  placeholder="Password"
                 />
               </label>
               <label className="input text-black input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border">
@@ -115,20 +128,17 @@ function CreatePage() {
                   value={rePassword}
                   onChange={(e) => setRePassword(e.target.value)}
                   className=""
-                  placeholder=" Re enter password"
-                />{" "}
-                {}
+                  placeholder="Re-enter Password"
+                />
               </label>
             </div>
-            <Link
-              href={"/Login"}
-              onClick={addUser}
-              disabled={name === "" || email === "" || password === ""}
-              className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl "
+            <button
+              onClick={signUp}
+              // disabled={name === "" || email === "" || password === "" || rePassword === ""}
+              className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl"
             >
               Sign Up
-            </Link>
-
+            </button>
             <div className="flex items-center justify-center gap-[10px]">
               <p className="text-[16px] text-black">Already have an account?</p>
               <Link href="/Login">

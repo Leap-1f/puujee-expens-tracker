@@ -3,6 +3,12 @@ import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
 
 function Frame() {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedFrame, setSelectedFrame] = useState(null);
+
+  const handleFrameSelect = (frame) => {
+    setSelectedFrame(frame);
+    setIsOpen(false);
+  };
 
   // Define an array of image filenames
   const imageFilenames = [
@@ -13,6 +19,7 @@ function Frame() {
     "Ladder.svg",
     "ImageSquare.svg",
   ];
+
   const imageFilenames2 = [
     "IntersectSquare.svg",
     "ImageSquare.svg",
@@ -21,6 +28,7 @@ function Frame() {
     "MicrosoftExcelLogo.svg",
     "OrangeSlice.svg",
   ];
+
   const imageFilenames3 = [
     "ListPlus.svg",
     "HourglassSimpleMedium.svg",
@@ -29,6 +37,7 @@ function Frame() {
     "RoadHorizon.svg",
     "AnchorSimple.svg",
   ];
+
   const imageFilenames4 = [
     "BezierCurve.svg",
     "Exclude.svg",
@@ -37,16 +46,17 @@ function Frame() {
     "Question.svg",
     "Exam.svg",
   ];
+
   const imageFilenames5 = [
     "Ladder.svg",
-
     "Watch.svg",
     "GlobeSimple.svg",
     "OrangeSlice.svg",
     "Peace.svg",
     "Pencil.svg",
   ];
-  const imageFilenames6 = [
+
+  const imageColorNames = [
     "Ellipse 130.svg",
     "Ellipse 131.svg",
     "Ellipse 132.svg",
@@ -55,14 +65,14 @@ function Frame() {
     "Ellipse 135.svg",
     "Ellipse 136.svg",
   ];
+
   return (
     <div>
       <div
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex relative justify-center items-center h-[48px] w-[84px] border-2 bg-gray-100 border-gray-300 rounded-xl gap-[10px] active:text-green-600 active:border-green-600
-        -600"
+        className="flex relative justify-center items-center h-[48px] w-[84px] border-2 bg-gray-100 border-gray-300 rounded-xl gap-[10px] active:text-green-600 active:border-green-600"
       >
-        <img src="Baseball.svg" alt="" />
+        <img src={selectedFrame || "Baseball.svg"} alt="" />
         {isOpen ? (
           <AiOutlineCaretUp className="h-[24px]" />
         ) : (
@@ -70,9 +80,9 @@ function Frame() {
         )}
       </div>
       {isOpen && (
-        <div className="bg-gray-100 shadow-2xl absolute top-[6 80px] flex flex-wrap items-start rounded-lg  w-[312px] h-[336px] px-[24px] py-[20px]">
+        <div className="bg-gray-100 shadow-2xl absolute top-[470px] flex flex-wrap items-start rounded-lg w-[312px] h-[336px] px-[24px] py-[20px]">
           <div className="flex w-full flex-col cursor-pointer gap-[24px] overflow-y-auto snap-y">
-            <div className="flex w-[24px]  gap-[24px] ">
+            <div className="flex w-[24px] gap-[24px]">
               {/* Map over the imageFilenames array to render each image */}
               {imageFilenames.map((filename, index) => (
                 <img
@@ -80,55 +90,58 @@ function Frame() {
                   className="hover:scale-110"
                   src={filename}
                   alt=""
+                  onClick={() => handleFrameSelect(filename)}
                 />
               ))}
             </div>
-            <div className="flex w-[24px]  gap-[24px] ">
-              {/* Map over the imageFilenames array to render each image */}
+            <div className="flex w-[24px] gap-[24px]">
+              {/* Map over the imageFilenames2 array to render each image */}
               {imageFilenames2.map((filename, index) => (
                 <img
                   key={index}
                   className="hover:scale-110"
                   src={filename}
                   alt=""
+                  onClick={() => handleFrameSelect(filename)}
                 />
               ))}
             </div>
-            <div className="flex w-[24px]  gap-[24px] ">
-              {/* Map over the imageFilenames array to render each image */}
+            <div className="flex w-[24px] gap-[24px]">
+              {/* Map over the imageFilenames3 array to render each image */}
               {imageFilenames3.map((filename, index) => (
                 <img
                   key={index}
                   className="hover:scale-110"
                   src={filename}
                   alt=""
+                  onClick={() => handleFrameSelect(filename)}
                 />
               ))}
             </div>
-            <div className="flex w-[24px]  gap-[24px] ">
-              {/* Map over the imageFilenames array to render each image */}
+            <div className="flex w-[24px] gap-[24px]">
+              {/* Map over the imageFilenames4 array to render each image */}
               {imageFilenames4.map((filename, index) => (
                 <img
                   key={index}
                   className="hover:scale-110"
                   src={filename}
                   alt=""
+                  onClick={() => handleFrameSelect(filename)}
                 />
               ))}
             </div>
-
-            <div className="flex w-[24px]  gap-[24px] ">
-              {/* Map over the imageFilenames array to render each image */}
+            <div className="flex w-[24px] gap-[24px]">
+              {/* Map over the imageFilenames5 array to render each image */}
               {imageFilenames5.map((filename, index) => (
                 <img
                   key={index}
                   className="hover:scale-110"
                   src={filename}
                   alt=""
+                  onClick={() => handleFrameSelect(filename)}
                 />
               ))}
             </div>
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="264"
@@ -138,9 +151,9 @@ function Frame() {
             >
               <path opacity="0.1" d="M0 1H264" stroke="black" />
             </svg>
-            <div className="flex w-[20px]  gap-[20px] ">
-              {/* Map over the imageFilenames array to render each image */}
-              {imageFilenames6.map((filename, index) => (
+            <div className="flex w-[20px] gap-[20px]">
+              {/* Map over the imageFilenames6 array to render each image */}
+              {imageColorNames.map((filename, index) => (
                 <img
                   key={index}
                   className="hover:scale-110"

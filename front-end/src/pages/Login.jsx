@@ -1,13 +1,22 @@
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/router"; // Import useRouter hook
+import { useRouter } from "next/router";
+import * as Yup from "yup"; // Import Yup
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter(); // Initialize useRouter
+  const router = useRouter();
+
+  const schema = Yup.object().shape({
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    password: Yup.string().required("Password is required"),
+  });
+
   const logIn = async () => {
     try {
+      await schema.validate({ email, password }, { abortEarly: false });
+
       const response = await fetch("http://localhost:8080/api/signIn", {
         method: "POST",
         headers: {
@@ -26,7 +35,8 @@ function Login() {
         console.log("Login failed");
       }
     } catch (error) {
-      console.error("Error logging in:", error);
+      // Handle validation errors
+      console.error("Validation error:", error);
     }
   };
 

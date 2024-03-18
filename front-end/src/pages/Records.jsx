@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { Fragment, useState } from "react";
-// import Modal from "@/Components/Modal";
-// import Category from "@/Components/Category";
 import Modal from "@/components/Modal";
 import Category from "@/components/Category";
 function Records() {
@@ -107,7 +105,7 @@ function Records() {
   ];
   return (
     <Fragment>
-      <div className="flex justify-center h-[1250px] w-[100vw] bg-gray-100">
+      <div className="flex justify-center h-[1250px] w-[100vw] bg-gray-100 ">
         <div className="w-[1440px]   bg-gray-100  flex items-center flex-col">
           <div className="w-[100vw] bg-white flex  justify-center">
             <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
