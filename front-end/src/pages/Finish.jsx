@@ -7,8 +7,8 @@ function Finish() {
           <img className="w-[27px] h-[27px]" src="vector (1).svg" alt="" />
           <img className="w-[56px] h-[19px]" src="Geld (3).svg" alt="" />
         </div>
-        <ul className="steps w-[20vw] text-black">
-          <li className="step step-info">Currecy</li>
+        <ul className="steps w-[20vw] tracking-wide text-black">
+          <li className="step step-info ">Currecy</li>
           <li className="step step-info">Balance</li>
 
           <li className="step step-info ">Finish</li>
@@ -22,16 +22,16 @@ function Finish() {
         </div>
         <div className="flex flex-col gap-[32px] ">
           <div>
-            <p className=" text-black text-[12px] pt-[12px] text-center">
+            <p className=" text-black text-[16px] pt-[12px] text-center tracking-wide">
               Your very first account has been created. Now continue to
               dashboard and start tracking
             </p>
           </div>
           <Link
-            href={"/Dashboard"}
-            className="btn h-[50px] rounded-[20px]  w-[100%] text-white bg-blue-500 text-xl "
+            href={"/Login"}
+            className="btn h-[50px] rounded-[20px]  w-[100%] text-white bg-blue-500 text-xl tracking-wide"
           >
-            Go to Dashboard
+            Go to Login
           </Link>
         </div>
       </div>

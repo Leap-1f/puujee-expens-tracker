@@ -50,7 +50,7 @@ function Dropdown() {
                 </div>
               </div>
               <div
-                className="flex w-[350px] items-center gap-[25px] h-[40px] hover:underline hover:underline-offset-8  border-l-transparent  hover:border-l-[#FF4545] border-l-4  border-l-4 tracking-wider"
+                className="flex w-[350px] items-center gap-[25px] h-[40px] hover:underline hover:underline-offset-8  border-l-transparent  hover:border-l-[#FF4545]  border-l-4 tracking-wider"
                 onClick={() => handleCategorySelect("Gift")}
               >
                 <img src="Gift.svg" alt="" />
@@ -89,7 +89,7 @@ function Dropdown() {
                 className="flex w-[350px] items-center gap-[25px] h-[40px] hover:underline hover:underline-offset-8  border-l-transparent  hover:border-l-[#6F6CF3] border-l-4  tracking-wider"
                 onClick={() => handleCategorySelect("Shopping")}
               >
-                <img src="House.svg" alt="" />
+                <img src="TShirt.svg" alt="" />
                 <div>
                   <p>Shopping</p>
                 </div>

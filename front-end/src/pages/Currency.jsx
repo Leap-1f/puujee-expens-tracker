@@ -8,10 +8,10 @@ function Currency() {
           <img className="w-[56px] h-[19px]" src="Geld (3).svg" alt="" />
         </div>
         <ul className="steps w-[20vw]">
-          <li className="step step-info">Currecy</li>
-          <li className="step ">Balance</li>
+          <li className="step step-info tracking-wide">Currecy</li>
+          <li className="step tracking-wide">Balance</li>
 
-          <li className="step ">Finish</li>
+          <li className="step tracking-wide">Finish</li>
         </ul>
       </div>
       <div className="w-[384px] h-[304px]  gap-[24px]  flex flex-col items-center">

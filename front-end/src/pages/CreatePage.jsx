@@ -132,13 +132,19 @@ function CreatePage() {
                 />
               </label>
             </div>
-            <button
+            <Link
+              href={"/Currency"}
               onClick={signUp}
-              // disabled={name === "" || email === "" || password === "" || rePassword === ""}
+              disabled={
+                name === "" ||
+                email === "" ||
+                password === "" ||
+                rePassword === ""
+              }
               className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl"
             >
               Sign Up
-            </button>
+            </Link>
             <div className="flex items-center justify-center gap-[10px]">
               <p className="text-[16px] text-black">Already have an account?</p>
               <Link href="/Login">

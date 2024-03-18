@@ -10,6 +10,10 @@ function Balance() {
     // Update the balance state with the formatted value
     setBalance(formattedBalance);
   };
+  const parsedBalance = parseFloat(balance.replace(/,/g, ""));
+  const formattedBalance = isNaN(parsedBalance)
+    ? " "
+    : parsedBalance.toLocaleString();
 
   return (
     <div className="flex flex-col w-[100%] h-[100vh] justify-center items-center gap-[100px] bg-white">
@@ -18,7 +22,7 @@ function Balance() {
           <img className="w-[27px] h-[27px]" src="vector (1).svg" alt="" />
           <img className="w-[56px] h-[19px]" src="Geld (3).svg" alt="" />
         </div>
-        <ul className="steps w-[20vw]">
+        <ul className="steps tracking-wide w-[20vw]">
           <li className="step step-info">Currecy</li>
           <li className="step step-info">Balance</li>
 
@@ -38,7 +42,7 @@ function Balance() {
             <label className="input input-bordered flex items-center gap-2 h-[50px] w-[384px] border-gray-500 bg-gray-200 border text-black">
               <input
                 type="text"
-                value={parseFloat(balance.replace(/,/g, "")).toLocaleString()}
+                value={formattedBalance}
                 onChange={handleInputChange}
                 className="grow"
                 placeholder="Balance"
