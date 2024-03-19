@@ -10,7 +10,7 @@ function Records() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth() + 1); // Month is zero-based
   const [minRange, setMinRange] = useState(0);
-  const [maxRange, setMaxRange] = useState(10000);
+  const [maxRange, setMaxRange] = useState(1000);
   const [transactions, setTransactions] = useState([
     {
       title: "Today",
@@ -163,7 +163,7 @@ function Records() {
 
                     <Link
                       className="hover:bg-gray-200 duration-200 hover:rounded-lg"
-                      href={"/Login"}
+                      href={"/Currency"}
                     >
                       <p className="p-2">Settings</p>
                     </Link>
@@ -264,7 +264,7 @@ function Records() {
                     {categories.map((category) => (
                       <div
                         key={category.id}
-                        className="flex items-center h-[32px] cursor-pointer justify-between"
+                        className="flex items-center h-[32px] cursor-pointer dropdown dropdown-right justify-between"
                       >
                         <div className="flex gap-[20px]">
                           <img src="Leading icon (3).svg" alt="" />

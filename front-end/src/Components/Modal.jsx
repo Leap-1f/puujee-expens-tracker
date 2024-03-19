@@ -6,6 +6,19 @@ import { useState } from "react";
 function Modal({ isvisible, onClose }) {
   const [activeTab, setActiveTab] = useState("Expense");
   if (!isvisible) return null;
+  // const [balance, setBalance] = useState("");
+
+  // // Function to handle changes in the balance input
+  // const handleInputChange = (e) => {
+  //   // Remove non-numeric characters except commas
+  //   const formattedBalance = e.target.value.replace(/[^0-9,]/g, "");
+  //   // Update the balance state with the formatted value
+  //   setBalance(formattedBalance);
+  // };
+  // const parsedBalance = parseFloat(balance.replace(/,/g, ""));
+  // const formattedBalance = isNaN(parsedBalance)
+  //   ? " "
+  //   : parsedBalance.toLocaleString();
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center glass justify-center">
@@ -55,6 +68,8 @@ function Modal({ isvisible, onClose }) {
               </div>
               <input
                 type="number"
+                // value={formattedBalance}
+                // onChange={handleInputChange}
                 placeholder="Amount "
                 className="w-[348px] border-gray-400 h-[76px] bg-gray-100 rounded-2xl border flex flex-col p-[10px] "
               ></input>

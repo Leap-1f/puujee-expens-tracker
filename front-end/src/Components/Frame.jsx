@@ -80,7 +80,7 @@ function Frame() {
         )}
       </div>
       {isOpen && (
-        <div className="bg-gray-100 shadow-2xl absolute top-[470px] flex flex-wrap items-start rounded-lg w-[312px] h-[336px] px-[24px] py-[20px]">
+        <div className="bg-gray-100 shadow-2xl absolute top-[600px] flex flex-wrap items-start rounded-lg w-[312px] h-[336px] px-[24px] py-[20px]">
           <div className="flex w-full flex-col cursor-pointer gap-[24px] overflow-y-auto snap-y">
             <div className="flex w-[24px] gap-[24px]">
               {/* Map over the imageFilenames array to render each image */}

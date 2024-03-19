@@ -88,7 +88,7 @@ function Dashboard() {
                   >
                     <Link
                       className="flex justify-between items-center hover:bg-gray-200 duration-200 hover:rounded-lg"
-                      href={""}
+                      href={"/"}
                     >
                       <p className="p-2">Profile</p>
                       <span className="badge">New</span>
@@ -96,7 +96,7 @@ function Dashboard() {
 
                     <Link
                       className="hover:bg-gray-200 duration-200 hover:rounded-lg"
-                      href={"/Login"}
+                      href={"/Currency"}
                     >
                       <p className="p-2">Settings</p>
                     </Link>
