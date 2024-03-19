@@ -1,11 +1,11 @@
 import Link from "next/link";
+import { Geld } from "@/components/Icon";
 function Currency() {
   return (
     <div className="flex flex-col w-[100%] h-[100vh]  items-center justify-center gap-[100px] bg-white">
       <div className="flex flex-col justify-center items-center gap-[30px] pt-[40px]">
         <div className="flex items-center gap-[10px]">
-          <img className="w-[27px] h-[27px]" src="vector (1).svg" alt="" />
-          <img className="w-[56px] h-[19px]" src="Geld (3).svg" alt="" />
+        <Geld width="94" heigth="36"></Geld>
         </div>
         <ul className="steps w-[20vw]">
           <li className="step step-info tracking-wide">Currecy</li>

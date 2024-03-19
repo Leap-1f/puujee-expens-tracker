@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Fragment, useState } from "react";
 import Modal from "@/components/Modal";
+import { Vector } from "@/components/Icon";
 import Category from "@/components/Category";
 function Records() {
   const [showModal, setShowModal] = useState(false);
@@ -8,6 +9,8 @@ function Records() {
   const [selectedTab, setSelectedTab] = useState("all");
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth() + 1); // Month is zero-based
+  const [minRange, setMinRange] = useState(0);
+  const [maxRange, setMaxRange] = useState(10000);
   const [transactions, setTransactions] = useState([
     {
       title: "Today",
@@ -111,11 +114,7 @@ function Records() {
             <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
               <div className="flex justify-center items-center gap-[24px]">
                 <Link href={"/Dashboard"}>
-                  <img
-                    className="cursor-pointer w-[27px] "
-                    src="vector (1).svg"
-                    alt=""
-                  />
+                  <Vector />
                 </Link>
                 <Link
                   href={"/Dashboard"}
@@ -186,7 +185,7 @@ function Records() {
                   Records
                 </p>
                 <button
-                  className=" h-[32px] rounded-xl text-white bg-blue-600 text-md"
+                  className=" h-[32px] rounded-xl text-white bg-blue-600 text-md active:scale-95 duration-200"
                   onClick={() => setShowModal(true)}
                 >
                   + Add
@@ -288,35 +287,47 @@ function Records() {
                           alt=""
                         />
                         <p
-                          className="text-[16px] text-black font-semibold tracking-wide hover:underline"
+                          className="text-[16px] text-black font-semibold tracking-wide hover:underline "
                           onClick={() => setShowCategory(true)}
                         >
                           Add Category
                         </p>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-[12px] py-[24px]">
-                      <div className=" text-[16px] font-semibold text-black tracking-wide">
-                        <p>Amount Range</p>
+                    <div className="flex flex-col gap-3">
+                      <p className="font-medium">Amount range</p>
+                      <div className="flex *:w-[49%] *:h-10 justify-between">
+                        <input
+                          type="text"
+                          placeholder="min"
+                          className="input input-bordered w-full bg-white border-gray-500  rounded-lg max-w-xs"
+                          onChange={(event) => {
+                            setMinRange(event.target.value);
+                          }}
+                        />
+                        <input
+                          type="text"
+                          placeholder="max"
+                          className="input input-bordered w-full bg-white border-gray-500  rounded-lg max-w-xs"
+                          onChange={(event) => {
+                            setMaxRange(event.target.value);
+                          }}
+                        />
                       </div>
-                      <div className="flex gap-[16px]">
-                        <div className="h-[40px] rounded-lg text-black border font-medium border-gray-400 w-[114px] flex justify-center items-center bg-gray-200  hover:text-red-400 hover:duration-300">
-                          0
+                      <div>
+                        <section>
+                          <input
+                            className="w-full"
+                            type="range"
+                            min={minRange}
+                            max={maxRange}
+                            step={10}
+                          ></input>
+                        </section>
+                        <div className="flex justify-between">
+                          <p>{minRange}</p>
+                          <p>{maxRange}</p>
                         </div>
-                        <div className="h-[40px] tracking-wide rounded-lg text-black border font-medium border-gray-400 w-[114px] flex justify-center items-center bg-gray-200  hover:text-red-400 hover:duration-300">
-                          1000
-                        </div>
-                      </div>
-                      <input
-                        type="range"
-                        min={0}
-                        max="100"
-                        value="50"
-                        className="range range-sm"
-                      />
-                      <div className="w-full flex justify-between text-[16px] font-normal text-black px-2">
-                        <span>0</span>
-                        <span>1000</span>
                       </div>
                     </div>
                   </div>

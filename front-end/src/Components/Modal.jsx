@@ -33,9 +33,9 @@ function Modal({ isvisible, onClose }) {
         <div className="flex">
           <div className="flex h-[400px] w-[400px] gap-[20px] flex-col">
             <div className="flex flex-col gap-[32px] p-[24px]">
-              <div className="flex gap-[10px]">
+              <div className="flex gap-[10px] cursor-pointer">
                 <div
-                  className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center items-center btn btn-active text-white ${
+                  className={`w-[172px] h-[45px] rounded-3xl text-[16px] flex justify-center items-center  btn-active active:scale-95 duration-200 text-white ${
                     activeTab === "Expense" ? "bg-blue-600" : "text-black"
                   }`}
                   onClick={() => setActiveTab("Expense")}
@@ -44,7 +44,7 @@ function Modal({ isvisible, onClose }) {
                 </div>
                 <div>
                   <p
-                    className={`w-[172px] h-[35px] rounded-3xl text-[16px] flex justify-center btn items-center btn-active text-white ${
+                    className={`w-[172px] h-[45px] rounded-3xl text-[16px] flex justify-center active:scale-95 duration-200 items-center btn-active text-white ${
                       activeTab === "Income" ? "bg-green-600" : " text-black"
                     }`}
                     onClick={() => setActiveTab("Income")}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Chart from "chart.js/auto";
 import Example from "@/components/Chart/barchart";
 import DonutChart from "@/components/DonutChart";
+import { Vector } from "@/components/Icon";
 import Modal from "@/components/Modal";
 function Dashboard() {
   const [showModal, setShowModal] = useState(false);
@@ -47,11 +48,7 @@ function Dashboard() {
           <div className="w-[100vw] bg-white flex justify-center">
             <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
               <div className="flex justify-center items-center gap-[24px]">
-                <img
-                  className="w-[27px] cursor-pointer"
-                  src="vector (1).svg"
-                  alt=""
-                />
+                <Vector />
                 <Link
                   href={"/Dashboard"}
                   className="w-[150px] h-[40px] bg-clip-text text-transparent bg-gradient-to-r rounded-lg from-pink-500 to-violet-500 tracking-wide flex items-center justify-center border-t-orange-500 border-b-emerald-500 border-e-cyan-400 border-s-pink-600 hover:scale-95 hover:duration-300 hover:shadow-xl duration-300 border-2 text-[16px] text-black font-medium hover:text-blue-600 hover:border-blue-600 active:text-green-600 active:border-green-600"

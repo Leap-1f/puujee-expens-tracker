@@ -6,9 +6,11 @@ function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleCategorySelect = (category) => {
+  const handleCategorySelect = (category, image) => {
     setSelectedCategory(category);
+    setSelectedImage(image);
     setIsOpen(false);
   };
 
@@ -19,6 +21,7 @@ function Dropdown() {
           onClick={() => setIsOpen((prev) => !prev)}
           className="bg-gray-100 p-4 w-full rounded-xl h-[60px] text-black flex justify-between text-md    active:border-blue-500 active:text-blue-500 duration-300 avtive:text-blue-500"
         >
+          
           <p className="text-gray-400">
             {selectedCategory ? selectedCategory : "Find or choose category"}
           </p>
@@ -101,6 +104,7 @@ function Dropdown() {
       <Category
         isvisible={showModal}
         onClose={() => setShowModal(false)}
+        
       ></Category>
     </Fragment>
   );
