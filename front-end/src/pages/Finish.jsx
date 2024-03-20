@@ -5,7 +5,7 @@ function Finish() {
     <div className="flex flex-col w-[100%] h-[100vh] justify-center items-center gap-[100px] bg-white">
       <div className="flex flex-col justify-center items-center gap-[30px] pt-[40px]">
         <div className="flex items-center gap-[10px]">
-        <Geld width="94" heigth="36"></Geld>
+          <Geld width="94" heigth="36"></Geld>
         </div>
         <ul className="steps w-[20vw] tracking-wide text-black">
           <li className="step step-info ">Currecy</li>
@@ -22,9 +22,8 @@ function Finish() {
         </div>
         <div className="flex flex-col gap-[32px] ">
           <div>
-            <p className=" text-black text-[16px] pt-[12px] text-center tracking-wide">
-              Your very first account has been created. Now continue to
-              dashboard and start tracking
+            <p className=" text-black text-[12px] pt-[12px] text-center tracking-wide">
+              Таны анхны бүртгэл амжилттай үүсгэгдлээ.
             </p>
           </div>
           <Link

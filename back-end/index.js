@@ -26,7 +26,18 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(cors());
-
+app.post("api/user", async (req, res) => {
+  const { currency, balance } = req.body;
+  try {
+    const userData = await sql`
+    INSERT INTO users (name, email, password)
+    VALUES (${currency}, ${balance}) RETURNING *;`;
+    res.send(userData);
+  } catch (error) {
+    console.log("error signing up:", error);
+    res.status(500).send("error signing up");
+  }
+});
 // Handle sign-up request
 app.post("/api/signUp", async (req, res) => {
   const { name, email, password } = req.body;
@@ -45,22 +56,40 @@ app.post("/api/signUp", async (req, res) => {
   }
 });
 
-// Handle sign-in request
 app.post("/api/signIn", async (req, res) => {
-  const { email, password } = req.body;
   try {
-    const { email } = req.body;
-    const data = await sql`SELECT * FROM users where email=${email}`;
-    console.log(data);
-    if (data.length === 1) {
-      res.send({
-        message: "This email is registered.",
-      });
-    } else if (data.length === 0) {
-      res.send({ success: true, statusCode: 200 });
+    const { email, password } = req.body;
+
+    // Өгөгдсөн data дээр үндэслэн хэрэглэгчийн өгөгдлийг татаж авах
+    const userData = await sql`SELECT * FROM users WHERE email = ${email}`;
+
+    if (userData.length === 1) {
+      // Хэрэв өгсөн имэйлтэй хэрэглэгч байгаа бол нууц үгээ баталгаажуулна уу
+      const user = userData[0];
+      const passwordMatch = await bcrypt.compare(password, user.password);
+
+      if (passwordMatch) {
+        // Нууц үг таарч, хэрэглэгчийг баталгаажуулсан
+        res.send({
+          message: "Authentication successful.",
+          user: {
+            id: user.id,
+            email: user.email,
+            password: user.password,
+
+            // Шаардлагатай бол хэрэглэгчийн бусад мэдээллийг нэмнэ үү
+          },
+        });
+      } else {
+        // Password does not match
+        res.status(401).send({ message: "Incorrect password." });
+      }
+    } else {
+      // Өгөгдсөн имэйлтэй хэрэглэгч олдсонгүй
+      res.status(404).send({ message: "User not found." });
     }
   } catch (err) {
-    console.log(err);
+    console.error("Error during sign-in:", err);
   }
 });
 

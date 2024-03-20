@@ -45,7 +45,7 @@ function dashboard() {
     <Fragment>
       <div className="flex justify-center w-[100vw] bg-gray-200">
         <div className="w-[1440px] h-[1348px] bg-gray-200 items-center flex flex-col">
-          <div className="w-[100vw] bg-white flex justify-center">
+          <div className="w-[100vw] shadow-md bg-white flex justify-center">
             <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
               <div className="flex justify-center items-center gap-[24px]">
                 <Vector />

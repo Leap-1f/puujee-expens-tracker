@@ -111,8 +111,8 @@ function Records() {
     <Fragment>
       <div className="flex justify-center h-[1250px] w-[100vw] bg-gray-100 ">
         <div className="w-[1440px]   bg-gray-100  flex items-center flex-col">
-          <div className="w-[100vw] bg-white flex  justify-center">
-            <div className="navbar h-[80px] bg-white w-[1440px] flex items-center justify-between">
+          <div className="w-[100vw]  shadow-md bg-white flex  justify-center">
+            <div className="navbar  h-[80px] bg-white w-[1440px] flex items-center justify-between">
               <div className="flex justify-center items-center gap-[24px]">
                 <Link href={"/Dashboard"}>
                   <Vector />
@@ -160,7 +160,7 @@ function Records() {
                       href={"/Dashboard"}
                     >
                       <p className="p-2">Profile</p>
-                      <span className="badge text-white">New</span>
+                      <span className="badge text-white bg-black">New</span>
                     </Link>
 
                     <Link
@@ -187,7 +187,7 @@ function Records() {
                   Records
                 </p>
                 <button
-                  className=" h-[32px] rounded-xl text-white bg-blue-600 text-md active:scale-95 duration-200"
+                  className=" h-[32px] rounded-xl text-white bg-blue-500 text-md active:scale-95 duration-200"
                   onClick={() => setShowModal(true)}
                 >
                   + Add
@@ -280,27 +280,32 @@ function Records() {
                           src="Leading icon (5).svg"
                           alt=""
                         />
-                        <div className="dropdown-content bg-white border   z-[1] menu p-2 shadow border-gray-500 rounded-box w-52">
-                          <li>
+                        <div className="dropdown-content bg-white border hover:shadow-xl flex flex-col gap-[10px]   z-[1] menu p-2 shadow border-gray-500 rounded-box w-36">
+                          <div
+                            className="flex justify-between px-2  hover:scale-105 hover:duration-300 duration-300
+                          "
+                          >
                             <a> Edit</a>
-                          </li>
-                          <li>
-                            <a>Delete</a>
-                          </li>
+                            <img className="w-[18px]" src="edit.png" alt="" />
+                          </div>
+                          <div className="flex justify-between px-2  hover:scale-105 hover:duration-300 duration-300 ">
+                            <a> Delete</a>
+                            <img className="w-[18px]" src="delete.png" alt="" />
+                          </div>
                         </div>
                       </div>
                     ))}
                     <div className="flex items-center h-[32px] cursor-pointer justify-between">
-                      <div className="flex gap-[20px]">
+                      <div
+                        className="flex gap-[20px]"
+                        onClick={() => setShowCategory(true)}
+                      >
                         <img
                           className="hover:scale-125 duration-200"
                           src="Leading icon (6).svg"
                           alt=""
                         />
-                        <p
-                          className="text-[16px] text-black font-semibold tracking-wide hover:underline "
-                          onClick={() => setShowCategory(true)}
-                        >
+                        <p className="text-[16px] text-black font-semibold tracking-wide hover:underline ">
                           Add Category
                         </p>
                       </div>
@@ -309,16 +314,16 @@ function Records() {
                       <p className="font-medium">Amount range</p>
                       <div className="flex *:w-[49%] *:h-10 justify-between">
                         <input
-                          type="text"
-                          placeholder="min"
+                          type="number"
+                          placeholder="0"
                           className="input input-bordered w-full bg-white border-gray-500  rounded-lg max-w-xs"
                           onChange={(event) => {
                             setMinRange(event.target.value);
                           }}
                         />
                         <input
-                          type="text"
-                          placeholder="max"
+                          type="number"
+                          placeholder="1000"
                           className="input input-bordered w-full bg-white border-gray-500  rounded-lg max-w-xs"
                           onChange={(event) => {
                             setMaxRange(event.target.value);
@@ -350,25 +355,25 @@ function Records() {
               <div className="flex justify-between w-[1100px] h-[48px] py-[24px] pr-[20px] ">
                 <div className=" h-[48px] bf flex items-center justify-center gap-[15px]">
                   <button
-                    className="group relative  overflow-hidden rounded border  bg-gray-200  px-[10px] py-[2px] border-gray-300 items-center flex justify-center text-xl font-medium text-slate-800 hover:text-violet-600 focus:outline-none   active:text-white"
+                    className="group relative  overflow-hidden rounded border  bg-gray-200  px-[10px] py-[2px] border-gray-300 items-center flex justify-center text-xl font-medium text-slate-800 focus:outline-none    active:text-blue-500"
                     onClick={handlePreviousMonth}
                   >
-                    <span class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
-                    <span class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
-                    <span class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
-                    <span class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
+                    <span class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-blue-500 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-blue-500 transition-all duration-200 group-hover:h-full"></span>
+                    <span class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-blue-500 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-blue-500 transition-all duration-200 group-hover:h-full"></span>
                     «
                   </button>
-                  <button className=" w-[100px] h-[30px] text-[xl] text-black ">{`<-${year}-${month}->`}</button>
+                  <button className=" w-[100px] h-[30px] text-[xl] text-black ">{`  ${year}-${month} `}</button>
 
                   <button
-                    className="group relative  overflow-hidden rounded border  bg-gray-200  px-[10px] py-[2px] border-gray-300 items-center flex justify-center text-xl font-medium text-slate-800 hover:text-violet-600 focus:outline-none   active:text-white"
+                    className="group relative  overflow-hidden rounded border  bg-gray-200  px-[10px] py-[2px] border-gray-300 items-center flex justify-center text-xl font-medium text-slate-800  focus:outline-none   active:text-blue-500"
                     onClick={handleNextMonth}
                   >
-                    <span class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
-                    <span class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
-                    <span class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
-                    <span class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
+                    <span class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-blue-500 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-blue-500 transition-all duration-200 group-hover:h-full"></span>
+                    <span class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-blue-500 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-blue-500 transition-all duration-200 group-hover:h-full"></span>
                     »
                   </button>
                 </div>
