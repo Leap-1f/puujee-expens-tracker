@@ -49,26 +49,18 @@ app.post("/api/signUp", async (req, res) => {
 app.post("/api/signIn", async (req, res) => {
   const { email, password } = req.body;
   try {
-    // Retrieve user data from the database based on email
-    const userData = await sql`
-      SELECT * FROM users WHERE email = ${email};
-    `;
-    if (userData && userData.length > 0) {
-      // Compare stored hashed password with input password
-      const isValidPassword = await bcrypt.compare(
-        password,
-        userData[0].password
-        // res.status(200).send("amjilttai")
-      );
-      if (isValidPassword) {
-        res.redirect("http://localhost:3000/Dashboard");
-      } else {
-        res.status(401).send("Invalid email or password");
-      }
+    const { email } = req.body;
+    const data = await sql`SELECT * FROM users where email=${email}`;
+    console.log(data);
+    if (data.length === 1) {
+      res.send({
+        message: "This email is registered.",
+      });
+    } else if (data.length === 0) {
+      res.send({ success: true, statusCode: 200 });
     }
-  } catch (error) {
-    console.error("Error signing in:", error);
-    res.status(500).send("Error signing in");
+  } catch (err) {
+    console.log(err);
   }
 });
 

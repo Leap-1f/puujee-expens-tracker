@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes border-pulse {
+    0% {
+      border-color: red; /* Initial border color */
+    }
+    50% {
+      border-color: blue; /* Mid border color */
+    }
+    100% {
+      border-color: green; /* Final border color */
+    }
+  }
+  
+  .animate-border {
+    animation: border-pulse 2s infinite alternate; /* Adjust duration and other properties as needed */
+  }
+  

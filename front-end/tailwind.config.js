@@ -12,6 +12,15 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        "pulse-border": "pulse-border 2s infinite",
+      },
+      keyframes: {
+        "pulse-border": {
+          "0%, 100%": { borderColor: "red" },
+          "50%": { borderColor: "blue" },
+        },
+      },
     },
   },
   plugins: [require("daisyui")],

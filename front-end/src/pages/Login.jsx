@@ -60,7 +60,7 @@ function Login() {
               onSubmit={formik.handleSubmit}
               className="w-[100%] h-[48px] h-fixed"
             >
-              <div className="flex flex-col gap-[16px]">
+              <div className="flex flex-col gap-[10px]">
                 <label className="input input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border text-black">
                   <input
                     type="text"

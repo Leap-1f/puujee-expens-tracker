@@ -70,7 +70,7 @@ function CreatePage() {
               onSubmit={formik.handleSubmit}
               className="w-[100%] h-[48px] h-fixed"
             >
-              <div className="flex flex-col gap-[16px]">
+              <div className="flex flex-col gap-[10px]">
                 <div className="input input-bordered flex text-black h-[50px] border-gray-500 bg-gray-200 border  items-center gap-2">
                   <Field
                     type="text"

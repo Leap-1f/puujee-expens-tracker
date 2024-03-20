@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import Modal from "@/components/Modal";
 import { Vector } from "@/components/Icon";
+
 import Category from "@/components/Category";
 function Records() {
   const [showModal, setShowModal] = useState(false);
@@ -139,7 +140,8 @@ function Records() {
                     +Records
                   </div>
                 </div>
-                <div className="dropdown dropdown-end">
+
+                <div className="box dropdown dropdown-end animate-pulse-border">
                   <div
                     tabIndex={0}
                     role="button"
@@ -151,14 +153,14 @@ function Records() {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52"
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow-2xl text-black bg-white rounded-box w-52"
                   >
                     <Link
                       className="flex justify-between items-center hover:bg-gray-200 duration-200 hover:rounded-lg"
-                      href={""}
+                      href={"/Dashboard"}
                     >
                       <p className="p-2">Profile</p>
-                      <span className="badge">New</span>
+                      <span className="badge text-white">New</span>
                     </Link>
 
                     <Link
@@ -264,19 +266,28 @@ function Records() {
                     {categories.map((category) => (
                       <div
                         key={category.id}
-                        className="flex items-center h-[32px] cursor-pointer dropdown dropdown-right justify-between"
+                        className="flex items-center h-[32px] cursor-pointer justify-between dropdown dropdown-right dropdown-end"
                       >
-                        <div className="flex gap-[20px]">
+                        <div tabIndex={0} className="flex gap-[20px]">
                           <img src="Leading icon (3).svg" alt="" />
                           <p className="text-[16px] font-normal hover:underline ">
                             {category.name}
                           </p>
                         </div>
                         <img
+                          tabIndex={0}
                           className="w-[20px] h-[20px]  hover:scale-150 duration-200"
                           src="Leading icon (5).svg"
                           alt=""
                         />
+                        <div className="dropdown-content bg-white border   z-[1] menu p-2 shadow border-gray-500 rounded-box w-52">
+                          <li>
+                            <a> Edit</a>
+                          </li>
+                          <li>
+                            <a>Delete</a>
+                          </li>
+                        </div>
                       </div>
                     ))}
                     <div className="flex items-center h-[32px] cursor-pointer justify-between">
@@ -339,16 +350,25 @@ function Records() {
               <div className="flex justify-between w-[1100px] h-[48px] py-[24px] pr-[20px] ">
                 <div className=" h-[48px] bf flex items-center justify-center gap-[15px]">
                   <button
-                    className="w-[30px] h-[30px] hover:scale-95 duration-200 rounded-md bg-gray-200 flex justify-center items-center text-black text-xl border-gray-300 hover:text-blue-600 hover:border-blue-600 border active:text-green-600 active:border-green-600"
+                    className="group relative  overflow-hidden rounded border  bg-gray-200  px-[10px] py-[2px] border-gray-300 items-center flex justify-center text-xl font-medium text-slate-800 hover:text-violet-600 focus:outline-none   active:text-white"
                     onClick={handlePreviousMonth}
                   >
+                    <span class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
+                    <span class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
                     «
                   </button>
-                  <button className=" w-[100px] h-[30px] text-[xl] text-black ">{`${year}-${month}`}</button>
+                  <button className=" w-[100px] h-[30px] text-[xl] text-black ">{`<-${year}-${month}->`}</button>
+
                   <button
-                    className="w-[30px] h-[30px]  rounded-md hover:scale-95 duration-200 flex justify-center bg-gray-200 items-center  text-black text-xl border-gray-300 hover:text-blue-600 hover:border-blue-600 border active:text-green-600 active:border-green-600"
+                    className="group relative  overflow-hidden rounded border  bg-gray-200  px-[10px] py-[2px] border-gray-300 items-center flex justify-center text-xl font-medium text-slate-800 hover:text-violet-600 focus:outline-none   active:text-white"
                     onClick={handleNextMonth}
                   >
+                    <span class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
+                    <span class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-violet-600 transition-all duration-200 group-hover:w-full"></span>
+                    <span class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-violet-600 transition-all duration-200 group-hover:h-full"></span>
                     »
                   </button>
                 </div>
@@ -357,9 +377,11 @@ function Records() {
                   <option disabled selected>
                     Newest fisrt
                   </option>
-                  <option>MNT-Mongolian Tugrik</option>
-                  <option>USA-Dollar</option>
-                  <option>RUS-Ruble</option>
+                  <option>Today</option>
+                  <option>Yesterday</option>
+                  <option>Last Week</option>
+                  <option>Last Month</option>
+                  <option>Last Year</option>
                 </select>
               </div>
               {transactions.map((section, index) => (
@@ -371,7 +393,7 @@ function Records() {
                   {section.data.map((transaction) => (
                     <div
                       key={transaction.id}
-                      className="w-[100%]  cursor-pointer h-[64px] border border-gray-300 rounded-xl hover:shadow-md duration-150 bg-white px-[24px] py-[12px] flex items-center justify-between"
+                      className="w-[98%]   cursor-pointer h-[64px] border border-gray-300 rounded-xl hover:shadow-md duration-150 bg-white px-[24px] py-[12px] flex items-center justify-between"
                     >
                       <div className="flex items-center gap-[16px]">
                         <div className="form-control">

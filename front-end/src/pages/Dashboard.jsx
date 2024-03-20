@@ -5,7 +5,7 @@ import Example from "@/components/Chart/barchart";
 import DonutChart from "@/components/DonutChart";
 import { Vector } from "@/components/Icon";
 import Modal from "@/components/Modal";
-function Dashboard() {
+function dashboard() {
   const [showModal, setShowModal] = useState(false);
   const chartRef = useRef(null);
   const transactions = [
@@ -84,7 +84,7 @@ function Dashboard() {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52"
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-4 shadow-2xl bg-white text-black  rounded-box w-52"
                   >
                     <Link
                       className="flex justify-between items-center hover:bg-gray-200 duration-200 hover:rounded-lg"
@@ -237,4 +237,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default dashboard;
