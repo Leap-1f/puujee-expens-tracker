@@ -12,6 +12,25 @@ function Currency() {
       Currency: Yup.string().required("Currency is required"),
     }),
   });
+  const transactionCurrency = async (values) => {
+    try {
+      const response = await fetch("http://localhost:8080/api/transaction", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      const currencyData = await response.json();
+      console.log(currencyData);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+    async (values) => {
+      await transactionCurrency(values);
+    };
+  };
 
   return (
     <FormikProvider value={formik}>

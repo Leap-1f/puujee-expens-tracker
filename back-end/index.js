@@ -26,7 +26,7 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(cors());
-app.post("api/user", async (req, res) => {
+app.post("api/transaction", async (req, res) => {
   const { currency, balance } = req.body;
   try {
     const userData = await sql`
@@ -38,8 +38,6 @@ app.post("api/user", async (req, res) => {
     res.status(500).send("error signing up");
   }
 });
-
-
 
 // Handle sign-up request
 app.post("/api/signUp", async (req, res) => {
@@ -67,7 +65,7 @@ app.post("/api/signIn", async (req, res) => {
     const userData = await sql`SELECT * FROM users WHERE email = ${email}`;
 
     if (userData.length === 1) {
-      // Хэрэв өгсөн имэйлтэй хэрэглэгч байгаа бол нууц үгээ баталгаажуулна уу
+      // Хэрэв өгсөн имэйлтэй хэрэглэгч байгаа бол нууц үгээ баталгаажуулна
       const user = userData[0];
       const passwordMatch = await bcrypt.compare(password, user.password);
 
@@ -76,20 +74,20 @@ app.post("/api/signIn", async (req, res) => {
         res.send({
           message: "Authentication successful.",
           user: {
-            id: user.id,
-            email: user.email,
-            password: user.password,
-
-            // Шаардлагатай бол хэрэглэгчийн бусад мэдээллийг нэмнэ үү
+            // id: user.id,
+            // email: user.email,
+            // password: user.password,
           },
         });
       } else {
         // Password does not match
         res.status(401).send({ message: "Incorrect password." });
+        res.send("Incorrect password");
       }
     } else {
       // Өгөгдсөн имэйлтэй хэрэглэгч олдсонгүй
       res.status(404).send({ message: "User not found." });
+      res.send("User not found.");
     }
   } catch (err) {
     console.error("Error during sign-in:", err);

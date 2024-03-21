@@ -6,6 +6,10 @@ import { Geld } from "@/components/Icon";
 import { useFormik, FormikProvider } from "formik"; // Import Formik
 
 function Login() {
+  const [errorMessage, setErrorMessage] = useState("");
+  const handleOnSave = () => {
+    window.sessionStorage.setItem("name", "puujee");
+  };
   const router = useRouter();
 
   const formik = useFormik({
@@ -14,8 +18,8 @@ function Login() {
       password: "",
     },
     validationSchema: Yup.object().shape({
-      email: Yup.string().email("Invalid email").required("Email is required"),
-      password: Yup.string().required("Password is required"),
+      email: Yup.string().email(" ").required(""),
+      password: Yup.string().required(""),
     }),
     onSubmit: async (values) => {
       try {
@@ -34,7 +38,13 @@ function Login() {
         if (response.ok) {
           router.push("/Dashboard");
         } else {
-          console.log("Login failed");
+          if (response.status === 404) {
+            // Set error message for user not found
+            setErrorMessage("Хэрэглэгчийн бүртгэл олдсонгүй");
+          } else {
+            // Set general login failure message
+            setErrorMessage("Имэйл эсвэл Нууц үг буруу байна");
+          }
         }
       } catch (error) {
         console.error("Error:", error);
@@ -72,7 +82,7 @@ function Login() {
                   />
                 </label>
                 {formik.touched.email && formik.errors.email ? (
-                  <div className="text-red-500">{formik.errors.email}</div>
+                  <div className="text-red-500">{}</div>
                 ) : null}
                 <label className="input text-black input-bordered flex items-center gap-2 h-[50px] border-gray-500 bg-gray-200 border">
                   <svg
@@ -97,10 +107,14 @@ function Login() {
                   />
                 </label>
                 {formik.touched.password && formik.errors.password ? (
-                  <div className="text-red-500">{formik.errors.password}</div>
+                  <div className="text-red-500">{}</div>
                 ) : null}
               </div>
+              {errorMessage && (
+                <div className="text-red-500">{errorMessage}</div>
+              )}
               <button
+                onClick={handleOnSave}
                 type="submit"
                 className="btn my-[30px] h-[50px] rounded-3xl  w-[100%] text-white bg-blue-500 text-xl"
                 disabled={formik.isSubmitting || !formik.isValid}
