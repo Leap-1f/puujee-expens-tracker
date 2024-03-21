@@ -38,6 +38,9 @@ app.post("api/user", async (req, res) => {
     res.status(500).send("error signing up");
   }
 });
+
+
+
 // Handle sign-up request
 app.post("/api/signUp", async (req, res) => {
   const { name, email, password } = req.body;
@@ -94,7 +97,7 @@ app.post("/api/signIn", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server started on port http://localhost:${PORT}`);
+  console.log(`Server started on port http://127.0.0.1:${PORT}`);
 });
 
 // //
