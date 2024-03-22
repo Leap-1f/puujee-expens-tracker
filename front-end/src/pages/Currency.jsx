@@ -1,20 +1,26 @@
 import Link from "next/link";
 import { Geld } from "@/components/Icon";
-import { useFormik, FormikProvider } from "formik"; // Import Formik
-import * as Yup from "yup"; // Import Yup for validation schema
+import { useFormik, FormikProvider } from "formik";
+import * as Yup from "yup";
+import { useRouter } from "next/router";
 
 function Currency() {
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      Currency: "",
+      Currency: "", // Corrected the space here
     },
     validationSchema: Yup.object().shape({
       Currency: Yup.string().required("Currency is required"),
     }),
+    onSubmit: async (values) => {
+      await transactionCurrency(values); // Call transactionCurrency function here
+    },
   });
+
   const transactionCurrency = async (values) => {
     try {
-      const response = await fetch("http://localhost:8080/api/transaction", {
+      const response = await fetch("http://localhost:8080/api/signUpp", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -22,14 +28,19 @@ function Currency() {
         },
         body: JSON.stringify(values),
       });
+
       const currencyData = await response.json();
       console.log(currencyData);
+      if (response.ok) {
+        router.push("/Balance");
+      } else {
+        if (response.status === 404) {
+          console.log("ffff");
+        }
+      }
     } catch (error) {
       console.error("Error:", error);
     }
-    async (values) => {
-      await transactionCurrency(values);
-    };
   };
 
   return (
@@ -59,7 +70,7 @@ function Currency() {
                 value={formik.values.Currency}
                 onChange={formik.handleChange("Currency")}
               >
-                <option disabled selected>
+                <option disabled value="">
                   Select your currency
                 </option>
                 <option value="MNT">Mongolian Tugrik</option>
@@ -77,11 +88,11 @@ function Currency() {
                 </p>
               )}
             </div>
-            <Link href="/Balance">
+            <button type="submit">
               <p className="btn h-[50px] rounded-3xl w-[100%] text-white bg-blue-500 text-xl">
                 Confirm
               </p>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

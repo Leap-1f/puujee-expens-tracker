@@ -26,29 +26,28 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(cors());
-app.post("api/transaction", async (req, res) => {
-  const { currency, balance } = req.body;
+app.post("api/signUpp", async (req, res) => {
+  const { currency } = req.body;
   try {
-    const userData = await sql`
-    INSERT INTO users (name, email, password)
-    VALUES (${currency}, ${balance}) RETURNING *;`;
-    res.send(userData);
+    const userDataCurrency = await sql`
+    INSERT INTO users currency_type 
+    VALUES ${currency}, RETURNING *;`;
+    res.send(userDataCurrency);
   } catch (error) {
     console.log("error signing up:", error);
     res.status(500).send("error signing up");
   }
 });
 
-// Handle sign-up request
 app.post("/api/signUp", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, currency_type } = req.body;
   try {
     // Hash the password before storing it
     const hashedPassword = await bcrypt.hash(password, 10);
     // Insert user data into the database
     const signUpData = await sql`
       INSERT INTO users (name, email, password)
-      VALUES (${name}, ${email}, ${hashedPassword}) RETURNING *;
+      VALUES (${name}, ${email}, ${hashedPassword}, ${currency_type}) RETURNING *;
     `;
     res.send(signUpData);
   } catch (error) {
