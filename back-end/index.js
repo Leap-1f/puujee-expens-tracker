@@ -26,18 +26,18 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(cors());
-app.post("api/signUpp", async (req, res) => {
-  const { currency } = req.body;
-  try {
-    const userDataCurrency = await sql`
-    INSERT INTO users currency_type 
-    VALUES ${currency}, RETURNING *;`;
-    res.send(userDataCurrency);
-  } catch (error) {
-    console.log("error signing up:", error);
-    res.status(500).send("error signing up");
-  }
-});
+// app.post("api/signUpp", async (req, res) => {
+//   const { currency } = req.body;
+//   try {
+//     const userDataCurrency = await sql`
+//     INSERT INTO users currency_type 
+//     VALUES ${currency}, RETURNING *;`;
+//     res.send(userDataCurrency);
+//   } catch (error) {
+//     console.log("error signing up:", error);
+//     res.status(500).send("error signing up");
+//   }
+// });
 
 app.post("/api/signUp", async (req, res) => {
   const { name, email, password, currency_type } = req.body;
@@ -94,7 +94,7 @@ app.post("/api/signIn", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server started on port http://127.0.0.1:${PORT}`);
+  console.log(`Server started on port localhost:${PORT}`);
 });
 
 // //
